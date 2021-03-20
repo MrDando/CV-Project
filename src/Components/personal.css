@@ -1,0 +1,49 @@
+.personal {
+    padding: 30px 20px 0 20px;
+    width: 40%;
+    background-color: var(--silver);
+}
+
+h2 {
+    font-size: 20px;
+    border-bottom: 3px solid gray;
+}
+
+.name span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.lastname {
+    padding-top: 10px;
+}
+
+.photo-container {
+    margin-top: 20px;
+    margin-left: 20px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    height: 120px;
+    width: 120px;
+}
+
+.section {
+    padding-top: 20px;
+}
+
+.contact .category {
+    padding-top: 10px;
+}
+
+.contact .category-name {
+    font-weight: bold;
+}
+
+.skills ul {
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.languages .proficiency {
+    font-size: 0.8em;
+}
