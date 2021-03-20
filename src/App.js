@@ -1,9 +1,18 @@
 
+import React from 'react'
+
+import Personal from './Components/Personal'
+import Professional from './Components/Professional'
+
 function App() {
   return (
-    <div>
-      TEST
+    <div className='flex justify-center scale-down'>
+      <div className='cv flex'>
+      <Personal />
+      <Professional />
     </div>
+    </div>
+    
   );
 }
 
