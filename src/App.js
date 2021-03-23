@@ -2,8 +2,8 @@
 import React from 'react'
 
 import Form from './Components/Form'
-import Personal from './Components/Personal'
-import Professional from './Components/Professional'
+import Personal from './Components/CV/Personal'
+import Professional from './Components/CV/Professional'
 
 class App extends React.Component {
   constructor() {
