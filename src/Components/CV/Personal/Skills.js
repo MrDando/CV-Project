@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Skills(props) {
-    console.log('props', props)
     return (
         <div className='skills section'>
             <h2>Skills</h2>
@@ -19,9 +18,3 @@ function Skills(props) {
 }
 
 export default Skills
-
-/* <ul>
-      {tasks.map((task) => {
-        return <li key={uniqid()}>{task}</li>;
-      })}
-    </ul> */

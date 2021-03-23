@@ -29,7 +29,6 @@ class App extends React.Component {
   }
 
   submitForm(e) {
-    console.log('Form Submitted', this.personal)
     e.preventDefault();
 
     const {firstname, lastname, adress, phone, email, linkedIn} = this.personal
