@@ -5,7 +5,7 @@ function Languages() {
         <div className='languages section'>
             <h2>Languages</h2>
             <div id='languages-list'>
-                <div class='language-container'>
+                <div className='language-container'>
                     <div className='name'>English</div>
                     <div className='proficiency'>(Limited working proficiency)</div>
                 </div>

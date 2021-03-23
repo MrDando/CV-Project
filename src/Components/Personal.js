@@ -6,14 +6,19 @@ import Contact from './Personal/Contact'
 import Skills from './Personal/Skills'
 import Languages from './Personal/Languages'
 
-function Personal() {
+function Personal(props) {
+    const {firstname, lastname, adress, phone, email, linkedIn} = props.data
     return (
         <div className='personal flex column'>
-            <Name />
+            <Name   firstname={firstname}
+                    lastname={lastname}/>
             <div className='photo-container'>
                 <img src='#' alt=''></img>
             </div>
-            <Contact />
+            <Contact    adress={adress}
+                        phone={phone}
+                        email={email}
+                        linkedIn={linkedIn}/>
             <Skills />
             <Languages />
         </div>
