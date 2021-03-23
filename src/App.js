@@ -9,6 +9,7 @@ class App extends React.Component {
     super()
     this.submitForm = this.submitForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
+    this.addSkill = this.addSkill.bind(this)
 
     this.personal = {
       firstname: '',
@@ -21,7 +22,8 @@ class App extends React.Component {
       adress: '',
       phone: '',
       email: '',
-      linkedIn: ''
+      linkedIn: '',
+      skills: []
     }
   }
 
@@ -36,12 +38,26 @@ class App extends React.Component {
       adress: adress,
       phone: phone,
       email: email,
-      linkedIn: linkedIn
+      linkedIn: linkedIn,
     })
   }
 
   handleChange(e) {
     this.personal[e.target.name] = e.target.value
+  }
+
+  addSkill(e) {
+    e.preventDefault();
+    const skillName = e.target.querySelector('input').value;
+    const id = this.state.skills.length
+    const skill = {
+      skillName: skillName,
+      key: id
+    }
+    e.target.querySelector('input').value = ''
+    this.setState({
+      skills: this.state.skills.concat(skill),
+    });
   }
 
   render() {
@@ -66,7 +82,17 @@ class App extends React.Component {
               <button type='submit'>Submit</button>
             </form>
           </div>
-          
+          <div className='skills form-section'>
+            <h2>Skills</h2>
+            <div className=''>
+              <form onSubmit={this.addSkill}>
+                <input name='skill'></input>
+                <button type='submit'>Add Skill</button>
+              </form>
+            </div>
+           
+
+          </div>
   
         </div>
         <div className='cv flex'>

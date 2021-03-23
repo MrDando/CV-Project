@@ -7,7 +7,7 @@ import Skills from './Personal/Skills'
 import Languages from './Personal/Languages'
 
 function Personal(props) {
-    const {firstname, lastname, adress, phone, email, linkedIn} = props.data
+    const {firstname, lastname, adress, phone, email, linkedIn, skills} = props.data
     return (
         <div className='personal flex column'>
             <Name   firstname={firstname}
@@ -19,7 +19,7 @@ function Personal(props) {
                         phone={phone}
                         email={email}
                         linkedIn={linkedIn}/>
-            <Skills />
+            <Skills skills={skills}/>
             <Languages />
         </div>
     )

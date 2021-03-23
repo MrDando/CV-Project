@@ -1,18 +1,27 @@
 import React from 'react'
 
-function Skills() {
+function Skills(props) {
+    console.log('props', props)
     return (
         <div className='skills section'>
             <h2>Skills</h2>
             <div className='list'>
                 <ul>
-                    <li>Skill 1</li>
-                    <li>Skill 2</li>
-                    <li>Skill 3</li>
+                    {props.skills.map(skill => {
+                        return <li key={skill.key}>{skill.skillName}</li>
+                    })}
                 </ul>
+
+                
             </div>
         </div>
 )
 }
 
 export default Skills
+
+/* <ul>
+      {tasks.map((task) => {
+        return <li key={uniqid()}>{task}</li>;
+      })}
+    </ul> */
