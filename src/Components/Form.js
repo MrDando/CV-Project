@@ -1,6 +1,7 @@
 import React from 'react'
 
-import SkillsForm from './Form/SkillsForm'
+import SkillForms from './Form/SkillsForm'
+import LanguagesForm from './Form/LanguagesForm'
 
 function Form(props) {
     return(
@@ -25,14 +26,15 @@ function Form(props) {
           </div>
           <div className='skills form-section'>
             <h2>Skills</h2>
-            <SkillsForm skills={props.skills} modifySkill={props.modifySkill}/>
-            <div className=''>
+            <SkillForms skills={props.skills} modifySkill={props.modifySkill}/>
+            <div>
               <form onSubmit={props.addSkill}>
                 <input name='skill'></input>
                 <button type='submit'>Add Skill</button>
               </form>
             </div>
           </div>
+          <LanguagesForm />
         </div>
     )
 }
