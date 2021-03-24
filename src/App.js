@@ -14,6 +14,7 @@ class App extends React.Component {
     this.addSkill = this.addSkill.bind(this)
     this.modifySkill = this.modifySkill.bind(this)
     this.addLanguage = this.addLanguage.bind(this)
+    this.modifyLanguage = this.modifyLanguage.bind(this)
 
     this.personal = {
       firstname: '',
@@ -104,6 +105,28 @@ class App extends React.Component {
     });
   }
 
+  modifyLanguage(e) {
+    const type = e.target.innerText;
+    const name = e.target.previousElementSibling.previousElementSibling.value
+    const proficiency = e.target.previousElementSibling.value
+    
+    this.setState(prevState => {
+      let updatedState = []
+      prevState.languages.forEach(language => {
+        if (e.target.id === language.key) {
+          if (type === 'Edit') {
+            language.languageName = name
+            language.proficiency = proficiency
+            updatedState.push(language)
+          }
+        } else {
+          updatedState.push(language)
+        }
+      })
+      return {languages: updatedState}
+    })
+  }
+
   render() {
     return (
 
@@ -114,6 +137,7 @@ class App extends React.Component {
               modifySkill={this.modifySkill}
               skills={this.state.skills}
               addLanguage={this.addLanguage}
+              modifyLanguage={this.modifyLanguage}
               languages={this.state.languages}/>
         <div className='cv flex'>
           <Personal data={this.state}/>

@@ -26,7 +26,8 @@ function Form(props) {
           </div>
           <div className='skills form-section'>
             <h2>Skills</h2>
-            <SkillForms skills={props.skills} modifySkill={props.modifySkill}/>
+            <SkillForms skills={props.skills} 
+                        modifySkill={props.modifySkill}/>
             <div>
               <form onSubmit={props.addSkill}>
                 <input name='skill'></input>
@@ -34,7 +35,9 @@ function Form(props) {
               </form>
             </div>
           </div>
-          <LanguagesForm addLanguage={props.addLanguage}/>
+          <LanguagesForm  addLanguage={props.addLanguage}
+                          modifyLanguage={props.modifyLanguage}
+                          languages={props.languages}/>
         </div>
     )
 }

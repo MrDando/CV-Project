@@ -1,7 +1,6 @@
 import React from 'react'
 
 function Languages(props) {
-    console.log(props)
     return (
         <div className='languages section'>
             <h2>Languages</h2>
