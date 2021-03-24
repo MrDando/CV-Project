@@ -1,5 +1,6 @@
 
 import React from 'react'
+import uniqid from "uniqid";
 
 import Form from './Components/Form'
 import Personal from './Components/CV/Personal'
@@ -11,6 +12,8 @@ class App extends React.Component {
     this.submitForm = this.submitForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.addSkill = this.addSkill.bind(this)
+    this.editSkill = this.editSkill.bind(this)
+    this.deleteSkill = this.deleteSkill.bind(this)
 
     this.personal = {
       firstname: '',
@@ -49,22 +52,46 @@ class App extends React.Component {
   addSkill(e) {
     e.preventDefault();
     const skillName = e.target.querySelector('input').value;
-    const id = this.state.skills.length
-    const skill = {
-      skillName: skillName,
-      key: id
+    if (skillName) {
+      const id =  uniqid()
+      const skill = {
+        skillName: skillName,
+        key: id
+      }
+      e.target.querySelector('input').value = ''
+      this.setState({
+        skills: this.state.skills.concat(skill),
+      });
     }
-    e.target.querySelector('input').value = ''
-    this.setState({
-      skills: this.state.skills.concat(skill),
-    });
+  }
+
+  editSkill(e) {
+    console.log('edit', e)
+  }
+
+  deleteSkill(e) {
+    this.setState(prevState => {
+      let updatedState = []
+      prevState.skills.forEach(skill => {
+        if (e.target.id !== skill.key) {
+          updatedState.push(skill)
+        }
+      }
+      )
+      return {skills: updatedState}
+    })
   }
 
   render() {
     return (
 
       <div className='flex justify-center scale-down'>
-        <Form submitForm={this.submitForm} handleChange={this.handleChange} addSkill={this.addSkill}/>
+        <Form submitForm={this.submitForm} 
+              handleChange={this.handleChange} 
+              addSkill={this.addSkill}
+              editSkill={this.editSkill}
+              deleteSkill={this.deleteSkill}
+              skills={this.state.skills}/>
         <div className='cv flex'>
           <Personal data={this.state}/>
           <Professional />

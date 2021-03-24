@@ -1,5 +1,19 @@
 import React from 'react'
 
+function SkillsForm(props) {
+  return(
+    <div>
+      {props.skills.map(skill => {
+        return  <div key={skill.key} className='flex'>
+                  <h1>{skill.skillName}</h1>
+                  <button onClick={props.editSkill}>Edit</button>
+                  <button onClick={props.deleteSkill} id={skill.key}>Delete</button>
+                </div>
+      })}
+    </div>
+  )
+}
+
 function Form(props) {
     return(
         <div className='cv-form'>
@@ -23,6 +37,7 @@ function Form(props) {
           </div>
           <div className='skills form-section'>
             <h2>Skills</h2>
+            <SkillsForm skills={props.skills} editSkill={props.editSkill} deleteSkill={props.deleteSkill}/>
             <div className=''>
               <form onSubmit={props.addSkill}>
                 <input name='skill'></input>
