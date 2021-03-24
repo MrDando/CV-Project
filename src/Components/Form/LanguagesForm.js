@@ -5,21 +5,24 @@ function LanguagesForm(props) {
         <div className='languages form-section'>
             <h2>Languages</h2>
             <div>
-              <form className='flex'>
+              <form onSubmit={props.addLanguage}>
+                <div className='flex'>
                 <div className='flex column'>
                   <label>Language</label>
                   <input></input>
                 </div>
                 <div className='flex column'>
-                  <label for='language-proficiency'>Proficiency</label>
+                  <label htmlFor='language-proficiency'>Proficiency</label>
                   <select name="language-proficiency" id="language-proficiency">
-                    <option value="elementary">Elementary Proficiency</option>
-                    <option value="limited-working">Limited Working Proficiency</option>
-                    <option value="professional-working">Professional Working Proficiency</option>
-                    <option value="full-professional">Full Professional Proficiency</option>
-                    <option value="native-bilingual">Native / Bilingual Proficiency</option>
+                    <option value="Elementary Proficiency">Elementary Proficiency</option>
+                    <option value="Limited Working Proficiency">Limited Working Proficiency</option>
+                    <option value="Professional Working Proficiency">Professional Working Proficiency</option>
+                    <option value="Full Professional Proficiency">Full Professional Proficiency</option>
+                    <option value="Native / Bilingual Proficiency">Native / Bilingual Proficiency</option>
                   </select>
                 </div>
+                </div>
+                <button type='submit'>Submit</button>
               </form>
             </div>
           </div>

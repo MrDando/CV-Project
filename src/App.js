@@ -13,6 +13,7 @@ class App extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.addSkill = this.addSkill.bind(this)
     this.modifySkill = this.modifySkill.bind(this)
+    this.addLanguage = this.addLanguage.bind(this)
 
     this.personal = {
       firstname: '',
@@ -26,7 +27,8 @@ class App extends React.Component {
       phone: '',
       email: '',
       linkedIn: '',
-      skills: []
+      skills: [],
+      languages: []
     }
   }
 
@@ -84,6 +86,24 @@ class App extends React.Component {
     })
   }
 
+  addLanguage(e) {
+    e.preventDefault()
+    const languageName = e.target.querySelector('input').value;
+    const proficiency = e.target.querySelector('select').value;
+    
+    const id = uniqid()
+    const language = {
+      languageName: languageName,
+      proficiency: proficiency,
+      key: id
+    }
+
+    e.target.querySelector('input').value = ''
+    this.setState({
+      languages: this.state.languages.concat(language),
+    });
+  }
+
   render() {
     return (
 
@@ -92,7 +112,9 @@ class App extends React.Component {
               handleChange={this.handleChange} 
               addSkill={this.addSkill}
               modifySkill={this.modifySkill}
-              skills={this.state.skills}/>
+              skills={this.state.skills}
+              addLanguage={this.addLanguage}
+              languages={this.state.languages}/>
         <div className='cv flex'>
           <Personal data={this.state}/>
           <Professional />

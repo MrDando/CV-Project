@@ -34,7 +34,7 @@ function Form(props) {
               </form>
             </div>
           </div>
-          <LanguagesForm />
+          <LanguagesForm addLanguage={props.addLanguage}/>
         </div>
     )
 }
