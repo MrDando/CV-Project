@@ -66,7 +66,20 @@ class App extends React.Component {
   }
 
   editSkill(e) {
-    console.log('edit', e)
+    const newVal = e.target.previousElementSibling.value;
+    this.setState(prevState => {
+      let updatedState = []
+      prevState.skills.forEach(skill => {
+        if (e.target.id !== skill.key) {
+          updatedState.push(skill)
+        } else {
+          skill.skillName = newVal
+          updatedState.push(skill)
+        }
+      }
+      )
+      return {skills: updatedState}
+    })
   }
 
   deleteSkill(e) {

@@ -5,8 +5,8 @@ function SkillsForm(props) {
     <div>
       {props.skills.map(skill => {
         return  <div key={skill.key} className='flex'>
-                  <h1>{skill.skillName}</h1>
-                  <button onClick={props.editSkill}>Edit</button>
+                  <input className='display-input' id={skill.key} defaultValue={skill.skillName}></input>
+                  <button onClick={props.editSkill} id={skill.key}>Edit</button>
                   <button onClick={props.deleteSkill} id={skill.key}>Delete</button>
                 </div>
       })}
