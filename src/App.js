@@ -12,8 +12,7 @@ class App extends React.Component {
     this.submitForm = this.submitForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.addSkill = this.addSkill.bind(this)
-    this.editSkill = this.editSkill.bind(this)
-    this.deleteSkill = this.deleteSkill.bind(this)
+    this.modifySkill = this.modifySkill.bind(this)
 
     this.personal = {
       firstname: '',
@@ -65,32 +64,22 @@ class App extends React.Component {
     }
   }
 
-  editSkill(e) {
+  modifySkill(e) {
+    const type = e.target.innerText;
     const newVal = e.target.previousElementSibling.value;
+    
     this.setState(prevState => {
       let updatedState = []
       prevState.skills.forEach(skill => {
-        if (e.target.id !== skill.key) {
-          updatedState.push(skill)
+        if (e.target.id === skill.key) {
+          if (type === 'Edit') {
+            skill.skillName = newVal
+            updatedState.push(skill)
+          }
         } else {
-          skill.skillName = newVal
           updatedState.push(skill)
         }
-      }
-      )
-      return {skills: updatedState}
-    })
-  }
-
-  deleteSkill(e) {
-    this.setState(prevState => {
-      let updatedState = []
-      prevState.skills.forEach(skill => {
-        if (e.target.id !== skill.key) {
-          updatedState.push(skill)
-        }
-      }
-      )
+      })
       return {skills: updatedState}
     })
   }
@@ -102,8 +91,7 @@ class App extends React.Component {
         <Form submitForm={this.submitForm} 
               handleChange={this.handleChange} 
               addSkill={this.addSkill}
-              editSkill={this.editSkill}
-              deleteSkill={this.deleteSkill}
+              modifySkill={this.modifySkill}
               skills={this.state.skills}/>
         <div className='cv flex'>
           <Personal data={this.state}/>
