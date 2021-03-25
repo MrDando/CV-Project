@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Summary() {
+function Summary(props) {
     return (
         <div>
             <h2>Summary</h2>
-            <p>Summary Placeholder</p>
+            <p>{props.summary}</p>
         </div>
     )
 }
@@ -43,10 +43,11 @@ function Education() {
     )
 }
 
-function Professional() {
+function Professional(props) {
+    console.log(props)
     return(
         <div className='professional flex column'>
-            <Summary />
+            <Summary summary={props.data.summary}/>
             <Experience />
             <Education />
         </div>

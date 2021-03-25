@@ -3,6 +3,7 @@ import React from 'react'
 import uniqid from "uniqid";
 
 import PersonalForm from './Components/Form/PersonalForm'
+import ProfessionalForm from './Components/Form/ProfessionalForm'
 import Personal from './Components/CV/Personal'
 import Professional from './Components/CV/Professional'
 
@@ -15,6 +16,7 @@ class App extends React.Component {
     this.modifySkill = this.modifySkill.bind(this)
     this.addLanguage = this.addLanguage.bind(this)
     this.modifyLanguage = this.modifyLanguage.bind(this)
+    this.submitSummary = this.submitSummary.bind(this)
 
     this.personal = {
       firstname: '',
@@ -29,7 +31,8 @@ class App extends React.Component {
       email: '',
       linkedIn: '',
       skills: [],
-      languages: []
+      languages: [],
+      summary: ''
     }
   }
 
@@ -127,12 +130,20 @@ class App extends React.Component {
     })
   }
 
+  submitSummary(e) {
+    e.preventDefault()
+    const newSummary = e.target.querySelector('textarea').value
+
+    this.setState({summary: newSummary})
+  }
+
   render() {
     return (
 
       <div className='flex justify-center scale-down'>
         <div className='cv-form'>
           <PersonalForm data={this.state} submitForm={this.submitForm} handleChange={this.handleChange} addSkill={this.addSkill} modifySkill={this.modifySkill} addLanguage={this.addLanguage} modifyLanguage={this.modifyLanguage}/>
+          <ProfessionalForm data={this.state} submitSummary={this.submitSummary}/>
         </div>      
         <div className='cv flex'>
           <Personal data={this.state}/>
