@@ -1,7 +1,7 @@
 import React from 'react'
 
-import SkillForms from './SkillsForm'
-import LanguagesForm from './LanguagesForm'
+import SkillForms from './PersonalForm/SkillsForm'
+import LanguagesForm from './PersonalForm/LanguagesForm'
 
 function PersonalForm(props) {
     return (
