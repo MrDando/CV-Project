@@ -2,7 +2,7 @@
 import React from 'react'
 import uniqid from "uniqid";
 
-import Form from './Components/Form'
+import PersonalForm from './Components/Form/PersonalForm'
 import Personal from './Components/CV/Personal'
 import Professional from './Components/CV/Professional'
 
@@ -131,14 +131,9 @@ class App extends React.Component {
     return (
 
       <div className='flex justify-center scale-down'>
-        <Form submitForm={this.submitForm} 
-              handleChange={this.handleChange} 
-              addSkill={this.addSkill}
-              modifySkill={this.modifySkill}
-              skills={this.state.skills}
-              addLanguage={this.addLanguage}
-              modifyLanguage={this.modifyLanguage}
-              languages={this.state.languages}/>
+        <div className='cv-form'>
+          <PersonalForm data={this.state} submitForm={this.submitForm} handleChange={this.handleChange} addSkill={this.addSkill} modifySkill={this.modifySkill} addLanguage={this.addLanguage} modifyLanguage={this.modifyLanguage}/>
+        </div>      
         <div className='cv flex'>
           <Personal data={this.state}/>
           <Professional data={this.state}/>

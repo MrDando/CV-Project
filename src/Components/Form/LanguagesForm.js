@@ -1,7 +1,6 @@
 import React from 'react'
 
 function LanguagesForm(props) {
-    console.log(props)
     return (
         <div className='languages form-section'>
             <h2>Languages</h2>
