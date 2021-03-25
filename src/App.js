@@ -141,7 +141,7 @@ class App extends React.Component {
               languages={this.state.languages}/>
         <div className='cv flex'>
           <Personal data={this.state}/>
-          <Professional />
+          <Professional data={this.state}/>
         </div>
       </div>
       
