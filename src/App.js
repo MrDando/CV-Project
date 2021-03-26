@@ -17,6 +17,8 @@ class App extends React.Component {
     this.addLanguage = this.addLanguage.bind(this)
     this.modifyLanguage = this.modifyLanguage.bind(this)
     this.submitSummary = this.submitSummary.bind(this)
+    this.submitExperience = this.submitExperience.bind(this)
+    this.modifyExperience = this.modifyExperience.bind(this)
 
     this.personal = {
       firstname: '',
@@ -32,7 +34,8 @@ class App extends React.Component {
       linkedIn: '',
       skills: [],
       languages: [],
-      summary: ''
+      summary: '',
+      experiences: [],
     }
   }
 
@@ -137,13 +140,101 @@ class App extends React.Component {
     this.setState({summary: newSummary})
   }
 
+  dateToObject(date) {
+    const dateArr = date.split('-')
+    const dateObj = {
+      year: dateArr[0],
+      month: dateArr[1],
+      day: dateArr[2]
+    }
+    return dateObj
+  }
+
+  submitExperience(e) {
+    e.preventDefault()
+    const position = e.target.querySelector('.position').value
+    e.target.querySelector('.position').value = ''
+    const employer = e.target.querySelector('.employer').value
+    e.target.querySelector('.employer').value = ''
+    const from = e.target.querySelector('.employment-from').value
+    const fromObj = this.dateToObject(from)
+    e.target.querySelector('.employment-from').value = ''
+    const to = e.target.querySelector('.employment-to').value
+    const toObj = this.dateToObject(to)
+    e.target.querySelector('.employment-to').value = ''
+    const description = e.target.querySelector('.employment-description').value
+    e.target.querySelector('.employment-description').value = ''
+    const id = uniqid()
+
+    const employment = {
+      position: position,
+      employer: employer,
+      from: from,
+      fromObj: fromObj,
+      to: to,
+      toObj: toObj,
+      description: description,
+      key: id
+    }
+    this.setState({
+      experiences: this.state.experiences.concat(employment),
+    });
+  }
+
+  modifyExperience(e) {
+    const container = e.target.parentElement.parentElement
+    const type = e.target.innerText;
+    const position = container.querySelector('.position').value
+    const employer = container.querySelector('.employer').value
+    const from = container.querySelector('.from').value
+    const fromObj = this.dateToObject(from)
+    const to = container.querySelector('.to').value
+    const toObj = this.dateToObject(to)
+    const description = container.querySelector('.description').value
+    const key = e.target.id
+
+    const updatedExperience = {
+      position: position,
+      employer: employer,
+      from: from,
+      fromObj: fromObj,
+      to: to,
+      toObj: toObj,
+      description: description,
+      key: key
+    }
+    
+    this.setState(prevState => {
+      let updatedState = []
+      prevState.experiences.forEach(experience => {
+        if (e.target.id === experience.key) {
+          if (type === 'Edit') {
+            updatedState.push(updatedExperience)
+          } 
+          } else {
+            updatedState.push(experience)
+        }
+      })
+      return {experiences: updatedState}
+    })
+  }
+
   render() {
     return (
 
       <div className='flex justify-center scale-down'>
         <div className='cv-form'>
-          <PersonalForm data={this.state} submitForm={this.submitForm} handleChange={this.handleChange} addSkill={this.addSkill} modifySkill={this.modifySkill} addLanguage={this.addLanguage} modifyLanguage={this.modifyLanguage}/>
-          <ProfessionalForm data={this.state} submitSummary={this.submitSummary}/>
+          <PersonalForm data={this.state} 
+                        submitForm={this.submitForm} 
+                        handleChange={this.handleChange} 
+                        addSkill={this.addSkill} 
+                        modifySkill={this.modifySkill} 
+                        addLanguage={this.addLanguage} 
+                        modifyLanguage={this.modifyLanguage}/>
+          <ProfessionalForm data={this.state} 
+                            submitSummary={this.submitSummary}
+                            submitExperience={this.submitExperience}
+                            modifyExperience={this.modifyExperience}/>
         </div>      
         <div className='cv flex'>
           <Personal data={this.state}/>

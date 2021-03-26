@@ -9,21 +9,20 @@ function Summary(props) {
     )
 }
 
-function Experience() {
+function Experience(props) {
     return(
         <div>
             <h2>Experience</h2>
-            <div className='job-container'>
-                <div className='flex'>
-                    <h3 className='organization-name'>Company name</h3>
-                    <span className='timespan'>From 1997 to 2019</span>
-                </div>
-                <span className='job-description'>Job description</span>
-                <ul className='job-responsibilities'>
-                    <li>One</li>
-                    <li>Two</li>
-                </ul>
-            </div>
+            {props.experiences.map(experience => {
+                return  <div key={experience.key} className='job-container'>
+                            <div className='flex'>
+                                <h3 className='position'>{experience.position}</h3>
+                                <h3 className='organization-name'>{experience.employer}</h3>
+                                <span className='timespan'>{experience.from.year} to {experience.to.year}</span>
+                            </div>
+                            <p>{experience.description}</p>
+                        </div>
+            })}
         </div>
     )
 }
@@ -44,11 +43,10 @@ function Education() {
 }
 
 function Professional(props) {
-    console.log(props)
     return(
         <div className='professional flex column'>
             <Summary summary={props.data.summary}/>
-            <Experience />
+            <Experience experiences={props.data.experiences}/>
             <Education />
         </div>
     )
