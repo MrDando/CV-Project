@@ -20,7 +20,8 @@ function FormContainer(props) {
                                 submitSummary={props.submitSummary}
                                 submitExperience={props.submitExperience}
                                 modifyExperience={props.modifyExperience}
-                                submitEducation={props.submitEducation}/>
+                                submitEducation={props.submitEducation}
+                                modifyEducation={props.modifyEducation}/>
         )
     }
 }

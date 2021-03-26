@@ -20,6 +20,7 @@ class App extends React.Component {
     this.submitExperience = this.submitExperience.bind(this)
     this.modifyExperience = this.modifyExperience.bind(this)
     this.submitEducation = this.submitEducation.bind(this)
+    this.modifyEducation = this.modifyEducation.bind(this)
 
     this.personal = {
       firstname: '',
@@ -236,12 +237,17 @@ class App extends React.Component {
     e.preventDefault()
     const container = e.target
     const institution = container.querySelector('.institution').value
+    container.querySelector('.institution').value = ''
     const degree = container.querySelector('.degree').value
+    container.querySelector('.degree').value = ''
     const from = container.querySelector('.education-from').value
+    container.querySelector('.education-from').value = ''
     const fromObj = this.dateToObject(from)
     const to = container.querySelector('.education-to').value
+    container.querySelector('.education-to').value = ''
     const toObj = this.dateToObject(to)
     const description = container.querySelector('.education-description').value
+    container.querySelector('.education-description').value = ''
     const id = uniqid()
     
     const education = {
@@ -257,6 +263,46 @@ class App extends React.Component {
     this.setState({
       educationArr: this.state.educationArr.concat(education),
     });
+  }
+
+  modifyEducation(e) {
+    e.preventDefault()
+    const container = e.target.parentElement.parentElement
+    const type = e.target.innerText;
+    const institution = container.querySelector('.institution').value
+    const degree = container.querySelector('.degree').value
+    const from = container.querySelector('.from').value
+    const fromObj = this.dateToObject(from)
+    const to = container.querySelector('.to').value
+    const toObj = this.dateToObject(to)
+    const description = container.querySelector('.description').value
+    const key = e.target.id
+
+    const updatedEducation = {
+      institution: institution,
+      degree: degree,
+      from: from,
+      fromObj: fromObj,
+      to: to,
+      toObj: toObj,
+      description: description,
+      key: key
+    }
+
+    this.setState(prevState => {
+      let updatedState = []
+      prevState.educationArr.forEach(education => {
+        if (e.target.id === education.key) {
+          if (type === 'Edit') {
+            updatedState.push(updatedEducation)
+          } 
+          } else {
+            updatedState.push(education)
+        }
+      })
+      return {educationArr: updatedState}
+    })
+    console.log(this.state)
   }
 
   render() {
@@ -278,7 +324,8 @@ class App extends React.Component {
                         submitSummary={this.submitSummary}
                         submitExperience={this.submitExperience}
                         modifyExperience={this.modifyExperience}
-                        submitEducation={this.submitEducation}/>
+                        submitEducation={this.submitEducation}
+                        modifyEducation={this.modifyEducation}/>
         </div>      
         <div className='cv flex'>
           <Personal data={this.state}/>

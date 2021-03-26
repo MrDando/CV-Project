@@ -28,7 +28,6 @@ function Experience(props) {
 }
 
 function Education(props) {
-    console.log(props)
     return(
         <div>
             <h2>Education</h2>
