@@ -37,15 +37,18 @@ function ExperienceForm(props) {
 function ProfessionalForm(props) {
     return (
         <div className='form-professional'>
+            <div className='form-section-header'>
+                <h3>Professional Information</h3>
+            </div>
             <div className='form-section'>
-                <h2>Summary</h2>
+                <h4>Summary</h4>
                 <form className='flex column' onSubmit={props.submitSummary}>
                     <textarea name="summary" cols="40" rows="5"></textarea>
                     <button type='submit'>Submit</button>
                 </form>
             </div>
             <div className='form-section'>
-                <h2>Experience</h2>
+                <h4>Experience</h4>
                 <ExperienceForm experiences={props.data.experiences} modifyExperience={props.modifyExperience}/>
                 <div className='experience-form'>
                     <form className='flex column' onSubmit={props.submitExperience}>
