@@ -2,14 +2,14 @@
 import React from 'react'
 import uniqid from "uniqid";
 
-import PersonalForm from './Components/Form/PersonalForm'
-import ProfessionalForm from './Components/Form/ProfessionalForm'
 import Personal from './Components/CV/Personal'
 import Professional from './Components/CV/Professional'
+import FormContainer from './Components/Form/FormContainer';
 
 class App extends React.Component {
   constructor() {
     super()
+    this.switchForm = this.switchForm.bind(this)
     this.submitForm = this.submitForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.addSkill = this.addSkill.bind(this)
@@ -26,6 +26,7 @@ class App extends React.Component {
     }
 
     this.state = {
+      form: 'personal',
       firstname: 'John',
       lastname: 'Doe',
       adress: '',
@@ -37,6 +38,16 @@ class App extends React.Component {
       summary: '',
       experiences: [],
     }
+  }
+
+  switchForm() {
+    this.setState(prevState => {
+      if (prevState.form === 'personal') {
+        return {form: 'professional'}
+      } else {
+        return {form: 'personal'}
+      }
+    })
   }
 
   submitForm(e) {
@@ -224,17 +235,20 @@ class App extends React.Component {
 
       <div className='flex justify-center scale-down'>
         <div className='cv-form'>
-          <PersonalForm data={this.state} 
+          <div className='flex'>
+            <h2>Input Form</h2>
+            <button onClick={this.switchForm}>Switch</button>
+          </div>
+        <FormContainer  data={this.state} 
                         submitForm={this.submitForm} 
                         handleChange={this.handleChange} 
                         addSkill={this.addSkill} 
                         modifySkill={this.modifySkill} 
                         addLanguage={this.addLanguage} 
-                        modifyLanguage={this.modifyLanguage}/>
-          <ProfessionalForm data={this.state} 
-                            submitSummary={this.submitSummary}
-                            submitExperience={this.submitExperience}
-                            modifyExperience={this.modifyExperience}/>
+                        modifyLanguage={this.modifyLanguage}
+                        submitSummary={this.submitSummary}
+                        submitExperience={this.submitExperience}
+                        modifyExperience={this.modifyExperience}/>
         </div>      
         <div className='cv flex'>
           <Personal data={this.state}/>
