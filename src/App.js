@@ -19,6 +19,7 @@ class App extends React.Component {
     this.submitSummary = this.submitSummary.bind(this)
     this.submitExperience = this.submitExperience.bind(this)
     this.modifyExperience = this.modifyExperience.bind(this)
+    this.submitEducation = this.submitEducation.bind(this)
 
     this.personal = {
       firstname: '',
@@ -37,6 +38,7 @@ class App extends React.Component {
       languages: [],
       summary: '',
       experiences: [],
+      educationArr: []
     }
   }
 
@@ -230,6 +232,33 @@ class App extends React.Component {
     })
   }
 
+  submitEducation(e) {
+    e.preventDefault()
+    const container = e.target
+    const institution = container.querySelector('.institution').value
+    const degree = container.querySelector('.degree').value
+    const from = container.querySelector('.education-from').value
+    const fromObj = this.dateToObject(from)
+    const to = container.querySelector('.education-to').value
+    const toObj = this.dateToObject(to)
+    const description = container.querySelector('.education-description').value
+    const id = uniqid()
+    
+    const education = {
+      degree: degree,
+      institution: institution,
+      from: from,
+      fromObj: fromObj,
+      to: to,
+      toObj: toObj,
+      description: description,
+      key: id
+    }
+    this.setState({
+      educationArr: this.state.educationArr.concat(education),
+    });
+  }
+
   render() {
     return (
 
@@ -248,7 +277,8 @@ class App extends React.Component {
                         modifyLanguage={this.modifyLanguage}
                         submitSummary={this.submitSummary}
                         submitExperience={this.submitExperience}
-                        modifyExperience={this.modifyExperience}/>
+                        modifyExperience={this.modifyExperience}
+                        submitEducation={this.submitEducation}/>
         </div>      
         <div className='cv flex'>
           <Personal data={this.state}/>

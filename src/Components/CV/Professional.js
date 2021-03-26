@@ -27,17 +27,23 @@ function Experience(props) {
     )
 }
 
-function Education() {
+function Education(props) {
+    console.log(props)
     return(
         <div>
             <h2>Education</h2>
-            <div className='education-container'>
-                <div className='flex'>
-                    <h3 className='organization-name'>University Name</h3>
-                    <span className='timespan'>From 1997 to 2019</span>
-                </div>
-                <span className='degree'>Degree Description</span>
-            </div>
+            {props.educationArr.map(education => {
+                return  <div key={education.key} className='education-container flex column'>
+                            <div className='flex'>
+                                <div>
+                                    <h4>{education.institution}</h4>
+                                    <h4>{education.degree}</h4>
+                                </div>
+                                <span className='timespan'>{education.fromObj.year} to {education.toObj.year}</span>
+                            </div>
+                            {education.description}
+                        </div>
+            })}
         </div>
     )
 }
@@ -47,7 +53,7 @@ function Professional(props) {
         <div className='professional flex column'>
             <Summary summary={props.data.summary}/>
             <Experience experiences={props.data.experiences}/>
-            <Education />
+            <Education educationArr={props.data.educationArr}/>
         </div>
     )
 }

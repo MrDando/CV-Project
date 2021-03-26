@@ -34,6 +34,10 @@ function ExperienceForm(props) {
     )
 }
 
+function EducationForm(props) {
+
+}
+
 function ProfessionalForm(props) {
     return (
         <div className='form-professional'>
@@ -65,7 +69,30 @@ function ProfessionalForm(props) {
                         <button type='submit'>Add Experience</button>
                     </form>    
                 </div>
-
+            </div>
+            <div className='form-section'>
+                <h4>Education</h4>
+                <div className='education-form'>
+                    <form className='flex column' onSubmit={props.submitEducation}>
+                        <input className='institution' placeholder='Institution'></input>
+                        <input className='degree' placeholder='Degree'></input>
+                        <div className='flex'>
+                            <div className='flex column'>
+                                <label htmlFor='education-from'>From:</label>
+                                <input className='education-from' name='education-from' type='date'></input>
+                            </div>
+                            <div className='flex column'>
+                                <label htmlFor='education-to'>To:</label>
+                                <input className='education-to' name='education-to' type='date'></input>
+                            </div>
+                        </div>
+                        <div className='flex column'>
+                            <label htmlFor='education-description'>Education Notes</label>
+                            <textarea className='education-description' name="education-description" cols="40" rows="3"></textarea>
+                        </div>
+                        <button type='submit'>Add Education</button>
+                    </form>
+                </div>
             </div>
         </div>
     )

@@ -19,7 +19,8 @@ function FormContainer(props) {
             <ProfessionalForm   data={props.data} 
                                 submitSummary={props.submitSummary}
                                 submitExperience={props.submitExperience}
-                                modifyExperience={props.modifyExperience}/>
+                                modifyExperience={props.modifyExperience}
+                                submitEducation={props.submitEducation}/>
         )
     }
 }
