@@ -1,72 +1,7 @@
 import React from 'react'
 
-function ExperienceForm(props) {
-    return (
-        <div>
-            {props.experiences.map(experience => {
-                return  <div key={experience.key} className='flex column'>
-                            <div className='flex'>
-                                <div className='flex column'>
-                                    <label htmlFor='position'>Position</label>
-                                    <input className='position' name='position' type='text' defaultValue={experience.position}></input>
-                                    <label htmlFor='employer'>Organization</label>
-                                    <input className='employer' name='employer' type='text' defaultValue={experience.employer}></input>
-                                </div>
-                                <div className='flex column'>
-                                    <div className='flex'>
-                                        <label>From</label>
-                                        <input type='date' className='from' defaultValue={experience.from}></input>
-                                    </div>
-                                    <div className='flex'>
-                                        <label>To</label>
-                                        <input type='date' className='to' defaultValue={experience.to}></input>
-                                    </div>
-                                </div>
-                            </div>
-                            <textarea className='description' defaultValue={experience.description}></textarea>
-                            <div className='flex justify-center'>
-                                <button id={experience.key} onClick={props.modifyExperience}>Edit</button>
-                                <button id={experience.key} onClick={props.modifyExperience}>Delete</button>
-                            </div>
-                        </div>
-            })}
-        </div>
-    )
-}
-
-function EducationForm(props) {
-    return (
-        <div>
-            {props.educationArr.map(education => {
-                return  <div key={education.key} className='flex column'>
-                            <div className='flex'>
-                                <div className='flex column'>
-                                    <label htmlFor='institution'>Institution</label>
-                                    <input className='institution' name='institution' type='text' defaultValue={education.institution}></input>
-                                    <label htmlFor='degree'>Degree</label>
-                                    <input className='degree' name='degree' type='text' defaultValue={education.degree}></input>
-                                </div>
-                                <div className='flex column'>
-                                    <div className='flex'>
-                                        <label>From</label>
-                                        <input type='date' className='from' defaultValue={education.from}></input>
-                                    </div>
-                                    <div className='flex'>
-                                        <label>To</label>
-                                        <input type='date' className='to' defaultValue={education.to}></input>
-                                    </div>
-                                </div>
-                            </div>
-                            <textarea className='description' defaultValue={education.description}></textarea>
-                            <div className='flex'>
-                                <button id={education.key} onClick={props.modifyEducation}>Edit</button>
-                                <button id={education.key} onClick={props.modifyEducation}>Delete</button>
-                            </div>
-                        </div>
-            })}
-        </div>
-    )
-}
+import ExperienceFormList from './ProfessionalForm/ExperienceFormList'
+import EducationFormList from './ProfessionalForm/EducationFormList'
 
 function ProfessionalForm(props) {
     console.log(props)
@@ -84,7 +19,7 @@ function ProfessionalForm(props) {
             </div>
             <div className='form-section'>
                 <h4>Experience</h4>
-                <ExperienceForm experiences={props.data.experiences} modifyExperience={props.modifyExperience}/>
+                <ExperienceFormList experiences={props.data.experiences} modifyExperience={props.modifyExperience}/>
                 <div className='experience-form'>
                     <form className='flex column' onSubmit={props.submitExperience}>
                         <input className='position' type='text' placeholder='Position'></input>
@@ -103,7 +38,7 @@ function ProfessionalForm(props) {
             </div>
             <div className='form-section'>
                 <h4>Education</h4>
-                <EducationForm educationArr={props.data.educationArr} modifyEducation={props.modifyEducation}/>
+                <EducationFormList educationArr={props.data.educationArr} modifyEducation={props.modifyEducation}/>
                 <div className='education-form'>
                     <form className='flex column' onSubmit={props.submitEducation}>
                         <input className='institution' placeholder='Institution'></input>
