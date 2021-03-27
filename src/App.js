@@ -11,6 +11,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.switchForm = this.switchForm.bind(this)
+    this.toggleAccordion = this.toggleAccordion.bind(this)
     this.submitForm = this.submitForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.addSkill = this.addSkill.bind(this)
@@ -52,6 +53,19 @@ class App extends React.Component {
         return {form: 'personal'}
       }
     })
+  }
+
+  toggleAccordion(e) {
+    const element = e.target
+    element.classList.toggle('active')
+
+    const panel = element.nextElementSibling
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+
   }
 
   submitForm(e) {
@@ -315,7 +329,8 @@ class App extends React.Component {
             <h2 className='cv-form-title'>Input Form</h2>
             <button className='toggle-form-btn' onClick={this.switchForm}>Switch</button>
           </div>
-        <FormContainer  data={this.state} 
+        <FormContainer  data={this.state}
+                        toggleAccordion={this.toggleAccordion} 
                         submitForm={this.submitForm} 
                         handleChange={this.handleChange} 
                         addSkill={this.addSkill} 

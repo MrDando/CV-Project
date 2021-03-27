@@ -10,8 +10,8 @@ function PersonalForm(props) {
             <h3>Personal Information</h3>
           </div>
           <div className='contact form-section'>
-            <h4>Contact</h4>
-            <form className='flex column' onSubmit={props.submitForm}>
+            <h4 className='accordion' onClick={props.toggleAccordion}>Contact</h4>
+            <form className='flex column panel' onSubmit={props.submitForm}>
               <div className ='flex' style={{justifyContent: 'space-between'}}>
                 <div className ='flex column contact-row'>
                   <input name='firstname' className='form-input contact-input' placeholder='First name' onChange={props.handleChange}></input>
@@ -30,21 +30,25 @@ function PersonalForm(props) {
             </form>
           </div>
           <div className='skills form-section'>
-            <h4>Skills</h4>
-            <SkillForms skills={props.data.skills} 
+            <h4 className='accordion' onClick={props.toggleAccordion}>Skills</h4>
+            <div className='panel'>
+              <SkillForms skills={props.data.skills} 
                         modifySkill={props.modifySkill}/>
-            <div className='main-input-div'>
-              <form className='flex column align-center' onSubmit={props.addSkill}>
-                <input className='form-input' name='skill' placeholder='Add a new skill'></input>
-                <button className='submit-btn' type='submit'>Add Skill</button>
-              </form>
+              <div className='main-input-div'>
+                <form className='flex column align-center' onSubmit={props.addSkill}>
+                  <input className='form-input' name='skill' placeholder='Add a new skill'></input>
+                  <button className='submit-btn' type='submit'>Add Skill</button>
+                </form>
             </div>
           </div>
+            </div>       
           <div className='languages form-section'>
-            <h4>Languages</h4>
-            <LanguagesForm  addLanguage={props.addLanguage}
-                            modifyLanguage={props.modifyLanguage}
-                            languages={props.data.languages}/>
+            <h4 className='accordion' onClick={props.toggleAccordion}>Languages</h4>
+            <div className='panel'>
+              <LanguagesForm  addLanguage={props.addLanguage}
+                              modifyLanguage={props.modifyLanguage}
+                              languages={props.data.languages}/>
+            </div>
           </div>
         </div>
     )

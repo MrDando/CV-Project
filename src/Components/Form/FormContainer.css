@@ -16,11 +16,6 @@
     padding: 0.7em;
 }
 
-.form-section {
-    padding: 1em;
-    border-bottom: 1px solid black;
-}
-
 .form-item {
     border-bottom: 5px solid gray;
 }
@@ -97,4 +92,24 @@ button {
 
 .date {
     width: fit-content;
+}
+
+.accordion {
+    background-color:var(--silver);
+    border-bottom: 2px solid #222;
+    cursor: pointer;
+    transition: 0.4s;
+    padding: 8px 18px;
+    text-align: center;
+}
+
+.active, .accordion:hover {
+    background-color: var(--jet);
+    color: white;
+}
+
+.panel {
+    padding: 10px 18px;
+    display: none;
+    overflow: hidden;
 }

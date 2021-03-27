@@ -8,6 +8,7 @@ function FormContainer(props) {
     if (props.data.form === 'personal') {
         return(
             <PersonalForm   data={props.data} 
+                            toggleAccordion={props.toggleAccordion}
                             submitForm={props.submitForm} 
                             handleChange={props.handleChange} 
                             addSkill={props.addSkill} 
@@ -17,7 +18,8 @@ function FormContainer(props) {
         )
     } else {
         return(
-            <ProfessionalForm   data={props.data} 
+            <ProfessionalForm   data={props.data}
+                                toggleAccordion={props.toggleAccordion} 
                                 submitSummary={props.submitSummary}
                                 submitExperience={props.submitExperience}
                                 modifyExperience={props.modifyExperience}
