@@ -31,6 +31,7 @@ class App extends React.Component {
 
     this.state = {
       form: 'personal',
+      switchButton: 'Education and employment',
       firstname: 'John',
       lastname: 'Doe',
       adress: '',
@@ -48,9 +49,11 @@ class App extends React.Component {
   switchForm() {
     this.setState(prevState => {
       if (prevState.form === 'personal') {
-        return {form: 'professional'}
+        return {form: 'professional',
+                switchButton: 'Personal information'}
       } else {
-        return {form: 'personal'}
+        return {form: 'personal',
+                switchButton: 'Education and employment'}
       }
     })
   }
@@ -327,7 +330,7 @@ class App extends React.Component {
         <div className='cv-form'>
           <div className='flex cv-form-header justify-center align-center'>
             <h2 className='cv-form-title'>Input Form</h2>
-            <button className='toggle-form-btn' onClick={this.switchForm}>Switch</button>
+            <button className='toggle-form-btn' onClick={this.switchForm}>{this.state.switchButton}</button>
           </div>
         <FormContainer  data={this.state}
                         toggleAccordion={this.toggleAccordion} 

@@ -8,7 +8,7 @@ function ProfessionalForm(props) {
     return (
         <div className='form-professional'>
             <div className='form-component-header flex justify-center'>
-                <h3>Professional Information</h3>
+                <h3>Education and employment</h3>
             </div>
             <div className='form-section'>
                 <h4 className='accordion' onClick={props.toggleAccordion}>Summary</h4>
