@@ -12,52 +12,64 @@ function ProfessionalForm(props) {
             </div>
             <div className='form-section'>
                 <h4>Summary</h4>
-                <form className='flex column' onSubmit={props.submitSummary}>
-                    <textarea name="summary" cols="40" rows="5"></textarea>
-                    <button type='submit'>Submit</button>
+                <form className='flex column align-center' onSubmit={props.submitSummary}>
+                    <textarea name="summary" cols="50" rows="4" style={{marginTop: '10px'}}></textarea>
+                    <div className='flex justify-center'>
+                        <button className='submit-btn' type='submit'>Submit</button>
+                    </div>
                 </form>
             </div>
             <div className='form-section'>
                 <h4>Experience</h4>
                 <ExperienceFormList experiences={props.data.experiences} modifyExperience={props.modifyExperience}/>
-                <div className='experience-form'>
+                <div className='main-input-div'>
                     <form className='flex column' onSubmit={props.submitExperience}>
-                        <input className='position' type='text' placeholder='Position'></input>
-                        <input className='employer' type='text' placeholder='Organization'></input>
-                        <div>
-                            <input className='employment-from' type='date'></input>
-                            <input className='employment-to' type='date'></input>
+                        <div className='flex' style={{justifyContent: 'space-evenly'}}>
+                            <div className='flex column align-center'>
+                                <input className='position form-input' type='text' placeholder='Position'></input>
+                                <label>From:</label>
+                                <input className='employment-from date' type='date'></input>
+                            </div>
+                            <div className='flex column align-center'>
+                                <input className='employer form-input' type='text' placeholder='Organization'></input>
+                                <label>To:</label>
+                                <input className='employment-to date' type='date'></input>
+                            </div>
                         </div>
-                        <div className='flex column'>
-                            <label htmlFor='employment-description'>Job Description</label>
-                            <textarea className='employment-description' name="employment-description" cols="40" rows="5"></textarea>
+                        <div className='flex column align-center'>
+                            <label>Job Description</label>
+                            <textarea className='employment-description' cols="40" rows="4"></textarea>
                         </div>
-                        <button type='submit'>Add Experience</button>
+                        <div className='flex justify-center'>
+                            <button className='submit-btn' type='submit'>Add Experience</button>
+                        </div>
                     </form>    
                 </div>
             </div>
             <div className='form-section'>
                 <h4>Education</h4>
                 <EducationFormList educationArr={props.data.educationArr} modifyEducation={props.modifyEducation}/>
-                <div className='education-form'>
+                <div className='main-input-div'>
                     <form className='flex column' onSubmit={props.submitEducation}>
-                        <input className='institution' placeholder='Institution'></input>
-                        <input className='degree' placeholder='Degree'></input>
-                        <div className='flex'>
-                            <div className='flex column'>
+                        <div className='flex' style={{justifyContent: 'space-evenly'}}>
+                            <div className='flex column align-center'>
+                                <input className='institution form-input' placeholder='Institution'></input>
                                 <label htmlFor='education-from'>From:</label>
                                 <input className='education-from' name='education-from' type='date'></input>
                             </div>
-                            <div className='flex column'>
+                            <div className='flex column align-center'>
+                                <input className='degree form-input' placeholder='Degree'></input>
                                 <label htmlFor='education-to'>To:</label>
                                 <input className='education-to' name='education-to' type='date'></input>
                             </div>
                         </div>
-                        <div className='flex column'>
-                            <label htmlFor='education-description'>Education Notes</label>
-                            <textarea className='education-description' name="education-description" cols="40" rows="3"></textarea>
+                        <div className='flex column align-center'>
+                            <label>Education Notes</label>
+                            <textarea className='education-description' cols="40" rows="3"></textarea>
                         </div>
-                        <button type='submit'>Add Education</button>
+                        <div className='flex justify-center'>
+                            <button className='submit-btn' type='submit'>Add Education</button>
+                        </div>
                     </form>
                 </div>
             </div>

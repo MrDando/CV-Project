@@ -21,6 +21,14 @@
     border-bottom: 1px solid black;
 }
 
+.form-item {
+    border-bottom: 5px solid gray;
+}
+
+.form-item:last-child {
+    border: none;
+}
+
 .form-row {
     margin-top: 0.5em;
 }
@@ -81,4 +89,12 @@ button {
 .language-proficiency {
     width: fit-content;
     margin-left: 1em;
+}
+
+.form-professional label {
+    margin-top: 10px;
+}
+
+.date {
+    width: fit-content;
 }
