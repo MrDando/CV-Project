@@ -1,5 +1,6 @@
 :root {
   --jet: #343434;
+  --dim-gray: #666666;
   --silver: #C2C2C2;
   --platinum: #EBEBEB;
   --cultured: #F5F5F5;
@@ -13,43 +14,4 @@
 
 body {
   background-color: var(--platinum);
-}
-
-.cv-form {
-  height: 800px;
-  width: 565px;
-  margin: 2em;
-  border: 1px solid black;
-  background-color: var(--cultured);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.cv {
-  height: 800px;
-  width: 565px;
-  margin: 2em;
-  border: 1px solid black;
-  background-color: var(--cultured);
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.flex {
-  display: flex;
-}
-
-.column {
-  flex-direction: column;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.form-section {
-  border-bottom: 1px solid black;
-}
-
-.personal-input {
-  padding: 0.5em;
-  margin: 0.5em 1em;
 }

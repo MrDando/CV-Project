@@ -1,4 +1,5 @@
 import React from 'react'
+import './FormContainer.css'
 
 import PersonalForm from './PersonalForm'
 import ProfessionalForm from './ProfessionalForm'

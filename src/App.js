@@ -1,6 +1,7 @@
 
 import React from 'react'
 import uniqid from "uniqid";
+import './App.css'
 
 import Personal from './Components/CV/Personal'
 import Professional from './Components/CV/Professional'
@@ -310,9 +311,9 @@ class App extends React.Component {
 
       <div className='flex justify-center scale-down'>
         <div className='cv-form'>
-          <div className='flex'>
-            <h2>Input Form</h2>
-            <button onClick={this.switchForm}>Switch</button>
+          <div className='flex cv-form-header justify-center align-center'>
+            <h2 className='cv-form-title'>Input Form</h2>
+            <button className='toggle-form-btn' onClick={this.switchForm}>Switch</button>
           </div>
         <FormContainer  data={this.state} 
                         submitForm={this.submitForm} 

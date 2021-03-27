@@ -1,0 +1,84 @@
+.cv-form-header {
+    background-color: var(--jet);
+    color: var(--platinum);
+    padding: 1em 1em;
+    position: relative;
+}
+
+.toggle-form-btn {
+    position: absolute;
+    right: 3em;
+}
+
+.form-component-header {
+    background-color: var(--dim-gray);
+    color: var(--platinum);
+    padding: 0.7em;
+}
+
+.form-section {
+    padding: 1em;
+    border-bottom: 1px solid black;
+}
+
+.form-row {
+    margin-top: 0.5em;
+}
+
+.main-input-div {
+    background-color: var(--platinum);
+    border: 1px solid black;
+    padding: 1em 0;
+    margin-top: 1em;
+}
+
+.contact-input {
+    margin-top: 0.7em;
+}
+
+.form-input {
+    padding: 0.5em;
+    width: 250px;
+}
+
+.mini-input {
+    padding: 0.2em;
+    width: 250px;
+}
+
+button {
+    font-weight: bold;
+    width: fit-content;
+    height: fit-content;
+}
+
+.submit-btn {
+    padding: 0.5em 1em;
+    margin-top: 1em;
+    background-color: #375a7f;
+    color: white;
+    border-radius: 5px;
+}
+
+.edit-btn {
+    padding: 0.2em 1em;
+    color: orange;
+    border: 1px solid orange;
+    margin-left: 1em;
+}
+
+.delete-btn {
+    padding: 0.2em 1em;
+    color: red;
+    border: 1px solid red;
+    margin-left: 1em;
+}
+
+.language-name {
+    width: 150px;
+}
+
+.language-proficiency {
+    width: fit-content;
+    margin-left: 1em;
+}

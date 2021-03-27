@@ -6,35 +6,37 @@ import LanguagesForm from './PersonalForm/LanguagesForm'
 function PersonalForm(props) {
     return (
         <div className='form-personal'>
-          <div className='form-section-header'>
+          <div className='form-component-header flex justify-center'>
             <h3>Personal Information</h3>
           </div>
           <div className='contact form-section'>
             <h4>Contact</h4>
             <form className='flex column' onSubmit={props.submitForm}>
-              <div className ='flex justified-center'>
-                <div className ='flex column' style={{flex: 1}}>
-                  <input name='firstname' className='personal-input' placeholder='First name' onChange={props.handleChange}></input>
-                  <input name='lastname' className='personal-input' placeholder='Last name' onChange={props.handleChange}></input>
-                  <input name='adress' className='personal-input' placeholder='Adress' onChange={props.handleChange}></input>
+              <div className ='flex' style={{justifyContent: 'space-between'}}>
+                <div className ='flex column contact-row'>
+                  <input name='firstname' className='form-input contact-input' placeholder='First name' onChange={props.handleChange}></input>
+                  <input name='lastname' className='form-input contact-input' placeholder='Last name' onChange={props.handleChange}></input>
+                  <input name='adress' className='form-input contact-input' placeholder='Adress' onChange={props.handleChange}></input>
                 </div>
-                <div className='flex column' style={{flex: 1}}>
-                  <input name='phone' className='personal-input' placeholder='Phone' onChange={props.handleChange}></input>
-                  <input name='email' className='personal-input' placeholder='Email' onChange={props.handleChange}></input>
-                  <input name='linkedIn' className='personal-input' placeholder='LinkedIn' onChange={props.handleChange}></input>
+                <div className='flex column contact-row'>
+                  <input name='phone' className='form-input contact-input' placeholder='Phone' onChange={props.handleChange}></input>
+                  <input name='email' className='form-input contact-input' placeholder='Email' onChange={props.handleChange}></input>
+                  <input name='linkedIn' className='form-input contact-input' placeholder='LinkedIn' onChange={props.handleChange}></input>
                 </div>
               </div>
-              <button type='submit'>Submit</button>
+              <div className='flex justify-center'>
+                <button className='submit-btn' type='submit'>Submit</button>
+              </div>
             </form>
           </div>
           <div className='skills form-section'>
             <h4>Skills</h4>
             <SkillForms skills={props.data.skills} 
                         modifySkill={props.modifySkill}/>
-            <div>
-              <form onSubmit={props.addSkill}>
-                <input name='skill'></input>
-                <button type='submit'>Add Skill</button>
+            <div className='main-input-div'>
+              <form className='flex column align-center' onSubmit={props.addSkill}>
+                <input className='form-input' name='skill' placeholder='Add a new skill'></input>
+                <button className='submit-btn' type='submit'>Add Skill</button>
               </form>
             </div>
           </div>

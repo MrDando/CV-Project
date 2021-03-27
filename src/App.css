@@ -1,0 +1,34 @@
+.cv-form {
+    height: 800px;
+    width: 620px;
+    margin: 2em;
+    border: 1px solid black;
+    background-color: var(--cultured);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    overflow-y: auto;
+  }
+  
+  .cv {
+    height: 800px;
+    width: 565px;
+    margin: 2em;
+    border: 1px solid black;
+    background-color: var(--cultured);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .column {
+    flex-direction: column;
+  }
+
+  .align-center {
+    align-items: center;
+  }
+  
+  .justify-center {
+    justify-content: center;
+  }

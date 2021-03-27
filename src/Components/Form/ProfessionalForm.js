@@ -72,7 +72,7 @@ function ProfessionalForm(props) {
     console.log(props)
     return (
         <div className='form-professional'>
-            <div className='form-section-header'>
+            <div className='form-component-header flex justify-center'>
                 <h3>Professional Information</h3>
             </div>
             <div className='form-section'>
