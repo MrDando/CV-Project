@@ -75,6 +75,7 @@ function Education(props) {
 
 function Template1(props) {
     const data = props.data
+    console.log(data)
     return (
         <div className='cv template1 flex'>
             <div className='personal flex column'>
@@ -83,7 +84,7 @@ function Template1(props) {
                     <span className='lastname'>{data.lastname}</span>
                 </div>
                 <div className='photo-container'>
-                    <img src='#' alt=''></img>
+                    <img src={data.photoURL} alt=''></img>
                 </div>
                 <div className='contact section'>
                     <h2>Contact</h2>

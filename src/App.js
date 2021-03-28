@@ -3,6 +3,8 @@ import React from 'react'
 import uniqid from "uniqid";
 import './App.css'
 
+import placeholderImg from './Assets/portrait-placeholder.jpg'
+
 import FormContainer from './Components/Form/FormContainer';
 import CVContainer from './Components/CVs/CVContainer'
 
@@ -34,6 +36,7 @@ class App extends React.Component {
       switchButton: 'Education and employment',
       firstname: 'John',
       lastname: 'Doe',
+      photoURL: placeholderImg, 
       adress: '7 Greystone St. Wilmington, MA',
       phone: '012-345-6789',
       email: 'example.email@google.com',
