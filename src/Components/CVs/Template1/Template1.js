@@ -1,8 +1,39 @@
 import React from 'react'
 import './Template1.css'
 
-import Skills from './Personal/Skills'
-import Languages from './Personal/Languages'
+
+function Skills(props) {
+    return (
+        <div className='skills section'>
+            <h2>Skills</h2>
+            <div className='list'>
+                <ul>
+                    {props.skills.map(skill => {
+                        return <li key={skill.key}>{skill.skillName}</li>
+                    })}
+                </ul>
+
+                
+            </div>
+        </div>
+    )
+}
+
+function Languages(props) {
+    return (
+        <div className='languages section'>
+            <h2>Languages</h2>
+            <div id='languages-list'>
+                {props.languages.map(language => {
+                    return  <div key={language.key} className='language'>
+                                <div className='name'>{language.languageName}</div>
+                                <div className='proficiency'>{language.proficiency}</div>
+                            </div>
+                })}
+            </div>
+        </div>
+    )
+}
 
 function Experience(props) {
     return(
