@@ -1,3 +1,7 @@
+.template1 {
+    background-color: var(--cultured);
+}
+
 .personal {
     padding: 30px 20px 0 20px;
     width: 40%;
