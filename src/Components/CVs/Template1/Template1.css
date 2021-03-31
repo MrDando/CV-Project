@@ -3,19 +3,32 @@
 }
 
 .personal {
-    padding: 30px 20px 0 20px;
+    padding: 50px 20px 20px 20px;
     width: 40%;
     background-color: var(--silver);
 }
 
-.personal h2 {
-    font-size: 20px;
-    border-bottom: 3px solid gray;
+.professional {
+    padding: 50px 20px 20px 20px;
 }
 
 .name span {
     font-size: 30px;
     font-weight: bold;
+}
+
+.template1 h2 {
+    font-size: 22px;
+    border-bottom: 3px solid var(--dim-gray);
+    margin-bottom: 10px;
+}
+
+.template1 h3 {
+    font-size: 16px;
+}
+
+.proficiency, .timespan, .position, .degree {
+    color: var(--dim-gray)
 }
 
 .lastname {
@@ -27,17 +40,23 @@
     margin-left: 20px;
     border: 1px solid gray;
     border-radius: 50%;
-    height: 120px;
-    width: 120px;
+    height: 160px;
+    width: 160px;
 }
 
 .section {
     padding-top: 20px;
 }
 
-.contact .category {
-    padding-top: 10px;
+.category {
+    padding-bottom: 10px;
 }
+
+.category:last-child {
+    padding-bottom: 0;
+}
+
+
 
 .contact .category-name {
     font-weight: bold;
@@ -46,6 +65,10 @@
 .skills ul {
     padding-top: 10px;
     padding-left: 20px;
+}
+
+.language {
+    margin-bottom: 5px;
 }
 
 .languages .proficiency {

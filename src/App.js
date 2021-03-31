@@ -56,7 +56,7 @@ class App extends React.Component {
                         year: "2016"
                       },
                       to: "2021-12-31",
-                      toObje: {
+                      toObj: {
                         day: "31",
                         month: "12",
                         year: "2021"
@@ -210,10 +210,15 @@ class App extends React.Component {
     const dateArr = date.split('-')
     const dateObj = {
       year: dateArr[0],
-      month: dateArr[1],
+      month: this.convertMonth(dateArr[1]),
       day: dateArr[2]
     }
     return dateObj
+  }
+
+  convertMonth(monthNumber) {
+    const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    return monthNames[monthNumber-1]
   }
 
   submitExperience(e) {

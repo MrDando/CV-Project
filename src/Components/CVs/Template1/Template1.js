@@ -27,7 +27,7 @@ function Languages(props) {
                 {props.languages.map(language => {
                     return  <div key={language.key} className='language'>
                                 <div className='name'>{language.languageName}</div>
-                                <div className='proficiency'>{language.proficiency}</div>
+                                <div className='proficiency'>({language.proficiency})</div>
                             </div>
                 })}
             </div>
@@ -37,14 +37,17 @@ function Languages(props) {
 
 function Experience(props) {
     return(
-        <div>
+        <div className='section'>
             <h2>Experience</h2>
             {props.experiences.map(experience => {
+                console.log(experience)
                 return  <div key={experience.key} className='job-container'>
-                            <div className='flex'>
-                                <h3 className='position'>{experience.position}</h3>
-                                <h3 className='organization-name'>{experience.employer}</h3>
-                                <span className='timespan'>{experience.from.year} to {experience.to.year}</span>
+                            <div className='flex' style={{justifyContent: 'space-between'}}>
+                                <div className='flex column'>
+                                    <h3 className='organization-name'>{experience.employer}</h3>
+                                    <h3 className='position'>{experience.position}</h3>
+                                </div>
+                                <span className='timespan'>{experience.fromObj.month} {experience.fromObj.year} to {experience.toObj.month} {experience.toObj.year}</span>
                             </div>
                             <p>{experience.description}</p>
                         </div>
@@ -55,16 +58,16 @@ function Experience(props) {
 
 function Education(props) {
     return(
-        <div>
+        <div className='section'>
             <h2>Education</h2>
             {props.educationArr.map(education => {
                 return  <div key={education.key} className='education-container flex column'>
-                            <div className='flex'>
-                                <div>
-                                    <h4>{education.institution}</h4>
-                                    <h4>{education.degree}</h4>
+                            <div className='flex' style={{justifyContent: 'space-between'}}>
+                                <div className='flex column'>
+                                    <h3>{education.institution}</h3>
+                                    <h3 className='degree'>{education.degree}</h3>
                                 </div>
-                                <span className='timespan'>{education.fromObj.year} to {education.toObj.year}</span>
+                                <span className='timespan'>{education.fromObj.month} {education.fromObj.year} to {education.toObj.month} {education.toObj.year}</span>
                             </div>
                             {education.description}
                         </div>
@@ -75,7 +78,6 @@ function Education(props) {
 
 function Template1(props) {
     const data = props.data
-    console.log(data)
     return (
         <div className='cv template1 flex'>
             <div className='personal flex column'>
@@ -83,25 +85,25 @@ function Template1(props) {
                     <span className='firstname'>{data.firstname}</span>
                     <span className='lastname'>{data.lastname}</span>
                 </div>
-                <div className='photo-container'>
+                <div className='photo-container flex'>
                     <img src={data.photoURL} alt=''></img>
                 </div>
                 <div className='contact section'>
                     <h2>Contact</h2>
                     <div className='address category'>
-                        <div className='category-name'>Adress:</div>
+                        <h3 className='category-name'>Adress:</h3>
                         <div className='value'>{data.adress}</div>
                     </div>
                     <div className='phone category'>
-                        <div className='category-name'>Phone:</div>
+                        <h3 className='category-name'>Phone:</h3>
                         <div className='value'>{data.phone}</div>
                     </div>
                     <div className='email category'>
-                        <div className='category-name'>email:</div>
+                        <h3 className='category-name'>email:</h3>
                         <div className='value'>{data.email}</div>
                     </div>
                     <div className='linkedin category'>
-                        <div className='category-name'>LinkedIn:</div>
+                        <h3 className='category-name'>LinkedIn:</h3>
                         <div className='value'>{data.linkedIn}</div>
                     </div>
                 </div>
