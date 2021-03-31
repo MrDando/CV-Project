@@ -12,6 +12,7 @@ class App extends React.Component {
   constructor() {
     super()
     this.switchForm = this.switchForm.bind(this)
+    this.switchCV = this.switchCV.bind(this)
     this.toggleAccordion = this.toggleAccordion.bind(this)
     this.submitForm = this.submitForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -104,6 +105,14 @@ class App extends React.Component {
                 switchButton: 'Education and employment'}
       }
     })
+  }
+
+  switchCV(e) {
+    const i = e.target.value
+
+    const template = `template${i}`
+
+    this.setState({cvTemplate: template})
   }
 
   toggleAccordion(e) {
@@ -378,30 +387,43 @@ class App extends React.Component {
 
   render() {
     return (
-
-      <div className='flex justify-center scale-down'>
-        <div className='cv-form'>
-          <div className='flex cv-form-header justify-center align-center'>
-            <h2 className='cv-form-title'>Input Form</h2>
-            <button className='toggle-form-btn' onClick={this.switchForm}>{this.state.switchButton}</button>
+      <div>
+        <header className='flex justify-center align-center'>
+          <div className='webpage-title'>
+            <h1>CV Creator</h1>
           </div>
-        <FormContainer  data={this.state}
-                        toggleAccordion={this.toggleAccordion} 
-                        submitForm={this.submitForm} 
-                        handleChange={this.handleChange} 
-                        addSkill={this.addSkill} 
-                        modifySkill={this.modifySkill} 
-                        addLanguage={this.addLanguage} 
-                        modifyLanguage={this.modifyLanguage}
-                        submitSummary={this.submitSummary}
-                        submitExperience={this.submitExperience}
-                        modifyExperience={this.modifyExperience}
-                        submitEducation={this.submitEducation}
-                        modifyEducation={this.modifyEducation}/>
-        </div>      
-        <div>
-          <CVContainer data={this.state} />
-        </div>
+          <div className='select-container'>
+            <p>CV Template</p>
+            <select className='cv-select' onChange={this.switchCV}>
+                    <option value="1">Template1</option>
+                    <option value="2">Template2</option>
+            </select>
+          </div>
+        </header>
+        <main className='flex justify-center scale-down'>
+          <div className='cv-form'>
+            <div className='flex cv-form-header justify-center align-center'>
+              <h2 className='cv-form-title'>Input Form</h2>
+              <button className='toggle-form-btn' onClick={this.switchForm}>{this.state.switchButton}</button>
+            </div>
+            <FormContainer  data={this.state}
+                            toggleAccordion={this.toggleAccordion} 
+                            submitForm={this.submitForm} 
+                            handleChange={this.handleChange} 
+                            addSkill={this.addSkill} 
+                            modifySkill={this.modifySkill} 
+                            addLanguage={this.addLanguage} 
+                            modifyLanguage={this.modifyLanguage}
+                            submitSummary={this.submitSummary}
+                            submitExperience={this.submitExperience}
+                            modifyExperience={this.modifyExperience}
+                            submitEducation={this.submitEducation}
+                            modifyEducation={this.modifyEducation}/>
+          </div>      
+          <div>
+            <CVContainer data={this.state} />
+          </div>
+        </main>
       </div>
       
     );

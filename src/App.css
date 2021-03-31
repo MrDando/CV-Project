@@ -1,3 +1,14 @@
+header {
+  padding: 15px 10px;
+  background-color: var(--jet);
+  color: var(--cultured)
+}
+
+header .select-container {
+  position: absolute;
+  right: 300px;
+}
+
 .cv-form {
     height: 800px;
     width: 620px;
