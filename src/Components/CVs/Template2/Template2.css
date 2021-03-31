@@ -1,0 +1,42 @@
+.template2 {
+    background-color: var(--quaternary);
+    color: var(--primary)
+}
+
+.template2.main-container {
+    padding: 35px 30px 35px 30px;
+}
+
+.template2 .top {
+    height: 150px;
+}
+
+.template2 .title-container {
+    width: 75%;
+    background-color: var(--primary);
+    color: var(--secondary);
+    padding: 40px 30px;
+}
+
+.template2 .name {
+    font-size: 34px;
+    font-weight: normal;
+}
+
+.template2 .profession {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.template2 .photo-container {
+    margin-left: 20px;
+    flex: 1;
+    border: 1px solid gray;
+}
+
+.template2 .bottom {
+    margin-top: 40px;
+    flex: 1;
+    width: 100%;
+    background-color: var(--quinary);
+}
