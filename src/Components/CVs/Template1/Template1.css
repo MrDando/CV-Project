@@ -1,15 +1,17 @@
 .template1 {
-    background-color: var(--cultured);
+    background-color: var(--secondary);
 }
 
 .personal {
     padding: 50px 20px 20px 20px;
     width: 40%;
-    background-color: var(--silver);
+    background-color: var(--primary);
+    color: var(--tertiary)
 }
 
 .professional {
     padding: 50px 20px 20px 20px;
+    color: var(--quaternary)
 }
 
 .name span {
@@ -19,7 +21,7 @@
 
 .template1 h2 {
     font-size: 22px;
-    border-bottom: 3px solid var(--dim-gray);
+    border-bottom: 3px solid var(--quinary);
     margin-bottom: 10px;
 }
 
@@ -28,7 +30,7 @@
 }
 
 .proficiency, .timespan, .position, .degree {
-    color: var(--dim-gray)
+    color: var(--quaternary)
 }
 
 .lastname {

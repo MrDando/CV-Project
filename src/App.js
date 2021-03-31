@@ -25,9 +25,23 @@ class App extends React.Component {
     this.submitEducation = this.submitEducation.bind(this)
     this.modifyEducation = this.modifyEducation.bind(this)
 
-    this.personal = {
-      firstname: '',
-      lastname: ''
+    this.colorSchemes = {
+      template1: {
+        Modern : {
+          primary: '#212629',
+          secondary: '#474a4f',
+          tertiary: '#618930',
+          quaternary: '#87c231',
+          quinary: '#6a6e71',
+        },
+        Stylish: {
+          primary: '#5d5c61',
+          secondary: '#f5f5f5',
+          tertiary: '#afa295',
+          quaternary: '#5d5c61',
+          quinary: '#5d5c61',
+        }
+      }
     }
 
     this.state = {
