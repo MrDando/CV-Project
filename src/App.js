@@ -85,6 +85,10 @@ class App extends React.Component {
       }
     }
 
+    this.personal = {
+      
+    }
+
     this.state = {
       form: 'personal',
       cvTemplate: 'template2',
