@@ -1,6 +1,22 @@
 .template2 {
-    background-color: var(--quaternary);
-    color: var(--primary)
+    background-color: var(--quinary);
+    color: var(--primary);
+    font-size: 14px;
+}
+
+.template2 h2 {
+    font-size: 18px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--tertiary);
+}
+
+.template2 h3 {
+    font-size: 14px;
+}
+
+.template2 .firstname, .template2 .profession {
+    color: var(--quaternary)
 }
 
 .template2.main-container {
@@ -35,8 +51,42 @@
 }
 
 .template2 .bottom {
+    padding: 25px;
     margin-top: 40px;
     flex: 1;
     width: 100%;
-    background-color: var(--quinary);
+    background-color: var(--secondary);
+}
+
+.template2 .summary {
+    text-align: justify;
+    margin-left: 40px;
+    flex: 1;
+}
+
+.template2 .skills {
+    padding: 0 30px;
+    flex: 1;
+}
+
+.template2 .section-row {
+    margin-bottom: 20px;
+}
+
+.template2 .item-row {
+    padding: 3px 0;
+}
+
+.template2 .item-row:first-child {
+    padding-top: 0;
+}
+
+.template2 .timespan {
+    width: 110px;
+    padding: 7px 0;
+    text-align: center;
+    background-color: var(--primary);
+    color: var(--quaternary);
+    font-weight: bold;
+    margin-right: 50px;
 }

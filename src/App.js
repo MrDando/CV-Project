@@ -79,7 +79,7 @@ class App extends React.Component {
             secondary: '#474a4f',
             tertiary: '#618930',
             quaternary: '#87c231',
-            quinary: '#6a6e71',
+            quinary: '#ffffff',
           },
         }
       }
@@ -87,7 +87,7 @@ class App extends React.Component {
 
     this.state = {
       form: 'personal',
-      cvTemplate: 'template1',
+      cvTemplate: 'template2',
       colorSchemes: ['Gray', 'Modern', 'Stylish', 'Purple Tints', 'Corporate'],
       switchButton: 'Education and employment',
       firstname: 'John',

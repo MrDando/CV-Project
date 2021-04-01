@@ -29,7 +29,7 @@
     font-size: 16px;
 }
 
-.timespan, .position, .degree {
+.template1 .timespan, .template1 .position, .template1 .degree {
     color: var(--quaternary)
 }
 
@@ -37,7 +37,7 @@
     padding-top: 10px;
 }
 
-.photo-container {
+.template1 .photo-container {
     margin-top: 20px;
     margin-left: 20px;
     border: 1px solid gray;

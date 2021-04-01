@@ -4,51 +4,42 @@ import './Template2.css'
 
 function Skills(props) {
     return (
-        <div className='skills section'>
-            <h2>Skills</h2>
-            <div className='list'>
-                <ul>
-                    {props.skills.map(skill => {
-                        return <li key={skill.key}>{skill.skillName}</li>
-                    })}
-                </ul>
-
-                
-            </div>
+        <div>
+            {props.skills.map(skill => {
+            return <div key={skill.key} className='item-row'>{skill.skillName}</div>
+        })}
         </div>
     )
 }
 
 function Languages(props) {
     return (
-        <div className='languages section'>
-            <h2>Languages</h2>
-            <div id='languages-list'>
-                {props.languages.map(language => {
-                    return  <div key={language.key} className='language'>
-                                <div className='name'>{language.languageName}</div>
-                                <div className='proficiency'>({language.proficiency})</div>
-                            </div>
-                })}
-            </div>
+        <div>
+            {props.languages.map(language => {
+                return  <div key={language.key} className='flex item-row'>
+                            <div>{language.languageName}</div>
+                            <div style={{marginLeft: '10px'}}>({language.proficiency})</div>
+                        </div>
+            })}
         </div>
     )
 }
 
 function Experience(props) {
     return(
-        <div className='section'>
-            <h2>Experience</h2>
+        <div>
             {props.experiences.map(experience => {
-                return  <div key={experience.key} className='job-container'>
-                            <div className='flex' style={{justifyContent: 'space-between'}}>
-                                <div className='flex column'>
-                                    <h3 className='organization'>{experience.employer}</h3>
-                                    <h3 className='position'>{experience.position}</h3>
-                                </div>
-                                <span className='timespan'>{experience.fromObj.month} {experience.fromObj.year} to {experience.toObj.month} {experience.toObj.year}</span>
+                return  <div key={experience.key} className='job-container flex'>
+                            <div>
+                                <p className='timespan'>{experience.fromObj.year} - {experience.toObj.year}</p>
                             </div>
-                            <p>{experience.description}</p>
+                            <div className='flex column'>
+                                <div className='flex' style={{marginBottom: '15px'}}>
+                                    <span>{experience.position.toUpperCase()}</span>
+                                    <span style={{marginLeft: '20px'}}>{experience.employer}</span>
+                                </div>
+                                <p>{experience.description}</p>
+                            </div>                          
                         </div>
             })}
         </div>
@@ -57,18 +48,12 @@ function Experience(props) {
 
 function Education(props) {
     return(
-        <div className='section'>
-            <h2>Education</h2>
+        <div>
             {props.educationArr.map(education => {
-                return  <div key={education.key} className='education-container flex column'>
-                            <div className='flex' style={{justifyContent: 'space-between'}}>
-                                <div className='flex column'>
-                                    <h3 className='institution'>{education.institution}</h3>
-                                    <h3 className='degree'>{education.degree}</h3>
-                                </div>
-                                <span className='timespan'>{education.fromObj.month} {education.fromObj.year} to {education.toObj.month} {education.toObj.year}</span>
-                            </div>
-                            {education.description}
+                return  <div key={education.key}>
+                            <h3 className='degree'>{education.degree}</h3>
+                            <h3 className='institution'>{education.institution}</h3>
+                            <span>{education.fromObj.year} - {education.toObj.year}</span>
                         </div>
             })}
         </div>
@@ -82,7 +67,7 @@ function Template2(props) {
             <div className='flex top'>
                 <div className='title-container flex column align-center'>
                     <div className='name'>
-                        <span style={{color: 'var(--quaternary)'}}>{data.firstname}</span>
+                        <span className='firstname'>{data.firstname}</span>
                         <span> {data.lastname}</span>
                     </div>
                     <div className='profession'>
@@ -94,7 +79,45 @@ function Template2(props) {
                 </div>
             </div>
             <div className='flex column bottom'>
-
+                <div className='flex section-row'>
+                    <div className='contact'>
+                        <h2>CONTACT</h2>
+                        <div>
+                            <span>{data.adress}</span>
+                        </div>
+                        <div>
+                            <span>{data.phone}</span>
+                        </div>
+                        <div>
+                            <span>{data.email}</span>
+                        </div>
+                        <div>
+                            <span>{data.linkedIn}</span>
+                        </div>
+                    </div>
+                    <div className='summary'>
+                        <h2>SUMMARY</h2>
+                        <span>{data.summary}</span>
+                    </div>
+                </div>
+                <div className='flex section-row' style={{justifyContent: 'space-between'}}>
+                    <div className='education'>
+                        <h2>EDUCATION</h2>
+                        <Education educationArr={data.educationArr}/>
+                    </div>
+                    <div className='skills'>
+                        <h2>SKILLS</h2>
+                        <Skills skills={data.skills}/>
+                    </div>
+                    <div className='languages'>
+                        <h2>LANGUAGES</h2>
+                        <Languages languages={data.languages} />
+                    </div>
+                </div>
+                <div>
+                    <h2>EXPERIENCE</h2>
+                    <Experience experiences={data.experiences} />
+                </div>
             </div>
         </div>
     )
