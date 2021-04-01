@@ -12,7 +12,7 @@ header .select-container {
 .cv-form {
     height: 800px;
     width: 620px;
-    margin: 2em;
+    margin: 30px;
     border: 1px solid black;
     background-color: var(--cultured);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -22,7 +22,7 @@ header .select-container {
   .cv {
     height: 297mm;
     width: 210mm;
-    margin: 2em;
+    margin: 30px;
     border: 1px solid black;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   }

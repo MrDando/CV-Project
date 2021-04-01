@@ -71,16 +71,37 @@ class App extends React.Component {
         }
       },
       template2: {
-        defaultScheme: 'Modern',
-        schemeList: ['Modern'],
+        defaultScheme: 'Gray',
+        schemeList: ['Gray', 'Modern', 'Purple Tints', 'Corporate'],
         schemes: {
-          Modern : {
-            primary: '#212629',
-            secondary: '#474a4f',
-            tertiary: '#618930',
-            quaternary: '#87c231',
-            quinary: '#ffffff',
+          Gray : {
+            primary: '#343434',
+            secondary: '#c2c2c2',
+            tertiary: '#343434',
+            quaternary: '#3aafa9',
+            quinary: '#f5f5f5',
           },
+          'Purple Tints': {
+            primary: '#4f1b1d',
+            secondary: '#adadad',
+            tertiary: '#2e1115',
+            quaternary: '#83687b',
+            quinary: '#f5f5f5',
+          },
+          Modern: {
+            primary: '#212629',
+            secondary: '#6a6e71',
+            tertiary: '#87c231',
+            quaternary: '#618930',
+            quinary: '#474a4f',
+          },
+          Corporate: {
+            primary: '#112d31',
+            secondary: '#264e58',
+            tertiary: '#f5f5f5',
+            quaternary: '#89bdbb',
+            quinary: '#f5f5f5',
+          }
         }
       }
     }

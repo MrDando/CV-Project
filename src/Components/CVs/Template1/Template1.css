@@ -81,7 +81,7 @@
     overflow: hidden;
 }
 
-.photo-container img {
+.template1 .photo-container img {
     display: block;
     max-height:100%;
     max-width:100%;
