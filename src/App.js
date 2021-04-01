@@ -4,6 +4,7 @@ import uniqid from "uniqid";
 import './App.css'
 
 import placeholderImg from './Assets/portrait-placeholder.jpg'
+import gitHubMark from './Assets/GitHub-Mark.png'
 
 import Header from './Components/Header/Header'
 import FormContainer from './Components/Form/FormContainer';
@@ -490,7 +491,8 @@ class App extends React.Component {
       <div>
         <Header switchCV={this.switchCV}
                 switchColorScheme={this.switchColorScheme}
-                colorSchemes={this.state.colorSchemes}/>
+                colorSchemes={this.state.colorSchemes}
+                gitHubURL={gitHubMark}/>
         <main className='flex justify-center scale-down'>
           <div className='cv-form'>
             <div className='flex cv-form-header justify-center align-center'>

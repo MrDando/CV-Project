@@ -19,17 +19,20 @@ function Header (props) {
           <div className='select-container flex'>
             <div>
               <p>CV Template</p>
-              <select className='cv-select' onChange={props.switchCV}>
+              <select className='cv-select select-css' onChange={props.switchCV}>
                       <option value="1">Template1</option>
                       <option value="2">Template2</option>
               </select>
             </div>
-            <div>
+            <div style={{marginLeft: '20px'}}>
                 <p>Color Scheme</p>
-                <select className='colorscheme-select' onChange={props.switchColorScheme}>
+                <select className='colorscheme-select select-css' onChange={props.switchColorScheme}>
                     <Options colorSchemes={props.colorSchemes}/>
                 </select>
             </div>
+          </div>
+          <div className='github-mark-container'>
+            <a href='https://github.com/MrDando/CV-Project' target="_blank" rel="noreferrer"><img src={props.gitHubURL} alt=''></img></a>
           </div>
         </header>
     )
