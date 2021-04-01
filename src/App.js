@@ -30,9 +30,16 @@ class App extends React.Component {
 
     this.colorSchemes = {
       template1: {
-        defaultScheme: 'Stylish',
-        schemeList: ['Modern', 'Stylish'],
+        defaultScheme: 'Gray',
+        schemeList: ['Gray','Modern', 'Stylish', 'Purple Tints', 'Corporate'],
         schemes: {
+          Gray: {
+            primary: '#c2c2c2',
+            secondary: '#f8f9fb',
+            tertiary: '#343434',
+            quaternary: '#343434',
+            quinary: '#666666',
+          },
           Modern : {
             primary: '#212629',
             secondary: '#474a4f',
@@ -46,6 +53,20 @@ class App extends React.Component {
             tertiary: '#afa295',
             quaternary: '#5d5c61',
             quinary: '#5d5c61',
+          },
+          'Purple Tints': {
+            primary: '#2e1115',
+            secondary: '#adadad',
+            tertiary: '#adadad',
+            quaternary: '#2e1115',
+            quinary: '#83687b',
+          },
+          Corporate: {
+            primary: '#112d31',
+            secondary: '#f5f5f5',
+            tertiary: '#f5f5f5',
+            quaternary: '#264e58',
+            quinary: '#89bdbb',
           }
         }
       },
@@ -67,7 +88,7 @@ class App extends React.Component {
     this.state = {
       form: 'personal',
       cvTemplate: 'template1',
-      colorSchemes: ['Modern', 'Stylish'],
+      colorSchemes: ['Gray', 'Modern', 'Stylish', 'Purple Tints', 'Corporate'],
       switchButton: 'Education and employment',
       firstname: 'John',
       lastname: 'Doe',
