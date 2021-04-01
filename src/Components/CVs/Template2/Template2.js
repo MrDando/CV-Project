@@ -71,7 +71,7 @@ function Template2(props) {
                         <span> {data.lastname}</span>
                     </div>
                     <div className='profession'>
-                        <span>Web Developer</span>
+                        <span>{data.profession}</span>
                     </div>
                 </div>
                 <div className='photo-container'>

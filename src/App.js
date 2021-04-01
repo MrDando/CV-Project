@@ -96,6 +96,7 @@ class App extends React.Component {
       switchButton: 'Education and employment',
       firstname: 'John',
       lastname: 'Doe',
+      profession: 'Environmental Scientist',
       photoURL: placeholderImg, 
       adress: '7 Greystone St. Wilmington, MA',
       phone: '012-345-6789',
@@ -300,9 +301,11 @@ class App extends React.Component {
 
   submitSummary(e) {
     e.preventDefault()
+    const profession = e.target.querySelector('input').value
     const newSummary = e.target.querySelector('textarea').value
 
-    this.setState({summary: newSummary})
+    this.setState({ profession: profession,
+                    summary: newSummary})
   }
 
   dateToObject(date) {

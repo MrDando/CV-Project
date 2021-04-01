@@ -14,9 +14,12 @@ function ProfessionalForm(props) {
                 <h4 className='accordion' onClick={props.toggleAccordion}>Summary</h4>
                 <div className='panel'>
                     <form className='flex column align-center' onSubmit={props.submitSummary}>
+                        <span>Profession</span>
+                        <input className='profession form-input' type='text'></input>
+                        <span style={{marginTop: '15px'}}>Summary</span>
                         <textarea name="summary" cols="50" rows="4" style={{marginTop: '10px'}}></textarea>
                         <div className='flex justify-center'>
-                            <button className='submit-btn' type='submit'>Submit</button>
+                            <button className='submit-btn' type='submit'>Update</button>
                         </div>
                     </form>
                 </div>
