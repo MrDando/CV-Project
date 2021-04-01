@@ -40,7 +40,6 @@ function Experience(props) {
         <div className='section'>
             <h2>Experience</h2>
             {props.experiences.map(experience => {
-                console.log(experience)
                 return  <div key={experience.key} className='job-container'>
                             <div className='flex' style={{justifyContent: 'space-between'}}>
                                 <div className='flex column'>

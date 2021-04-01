@@ -5,6 +5,7 @@ import './App.css'
 
 import placeholderImg from './Assets/portrait-placeholder.jpg'
 
+import Header from './Components/Header/Header'
 import FormContainer from './Components/Form/FormContainer';
 import CVContainer from './Components/CVs/CVContainer'
 
@@ -13,6 +14,7 @@ class App extends React.Component {
     super()
     this.switchForm = this.switchForm.bind(this)
     this.switchCV = this.switchCV.bind(this)
+    this.switchColorScheme = this.switchColorScheme.bind(this)
     this.toggleAccordion = this.toggleAccordion.bind(this)
     this.submitForm = this.submitForm.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -28,19 +30,36 @@ class App extends React.Component {
 
     this.colorSchemes = {
       template1: {
-        Modern : {
-          primary: '#212629',
-          secondary: '#474a4f',
-          tertiary: '#618930',
-          quaternary: '#87c231',
-          quinary: '#6a6e71',
-        },
-        Stylish: {
-          primary: '#5d5c61',
-          secondary: '#f5f5f5',
-          tertiary: '#afa295',
-          quaternary: '#5d5c61',
-          quinary: '#5d5c61',
+        defaultScheme: 'Stylish',
+        schemeList: ['Modern', 'Stylish'],
+        schemes: {
+          Modern : {
+            primary: '#212629',
+            secondary: '#474a4f',
+            tertiary: '#618930',
+            quaternary: '#87c231',
+            quinary: '#6a6e71',
+          },
+          Stylish: {
+            primary: '#5d5c61',
+            secondary: '#f5f5f5',
+            tertiary: '#afa295',
+            quaternary: '#5d5c61',
+            quinary: '#5d5c61',
+          }
+        }
+      },
+      template2: {
+        defaultScheme: 'Modern',
+        schemeList: ['Modern'],
+        schemes: {
+          Modern : {
+            primary: '#212629',
+            secondary: '#474a4f',
+            tertiary: '#618930',
+            quaternary: '#87c231',
+            quinary: '#6a6e71',
+          },
         }
       }
     }
@@ -48,6 +67,7 @@ class App extends React.Component {
     this.state = {
       form: 'personal',
       cvTemplate: 'template1',
+      colorSchemes: ['Modern', 'Stylish'],
       switchButton: 'Education and employment',
       firstname: 'John',
       lastname: 'Doe',
@@ -109,10 +129,41 @@ class App extends React.Component {
 
   switchCV(e) {
     const i = e.target.value
-
     const template = `template${i}`
 
-    this.setState({cvTemplate: template})
+    this.setState({ cvTemplate: template,
+                    colorSchemes: this.colorSchemes[template].schemeList})
+
+    const defaultScheme = this.colorSchemes[template].defaultScheme
+    const colorScheme = this.colorSchemes[template].schemes[defaultScheme]
+
+    this.applyColorScheme(colorScheme)
+  }
+
+  switchColorScheme(e) {
+    const selectedScheme = e.target.value
+
+    const template = this.state.cvTemplate
+    const colorScheme = this.colorSchemes[template].schemes[selectedScheme]
+
+    this.applyColorScheme(colorScheme)
+  }
+
+  applyColorScheme(scheme) {
+    console.log(scheme)
+    const primary = scheme.primary
+    const secondary = scheme.secondary
+    const tertiary = scheme.tertiary
+    const quaternary = scheme.quaternary
+    const quinary = scheme.quinary
+
+    let root = document.documentElement;
+
+    root.style.setProperty('--primary', primary)
+    root.style.setProperty('--secondary', secondary)
+    root.style.setProperty('--tertiary', tertiary)
+    root.style.setProperty('--quaternary', quaternary)
+    root.style.setProperty('--quinary', quinary)
   }
 
   toggleAccordion(e) {
@@ -388,18 +439,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <header className='flex justify-center align-center'>
-          <div className='webpage-title'>
-            <h1>CV Creator</h1>
-          </div>
-          <div className='select-container'>
-            <p>CV Template</p>
-            <select className='cv-select' onChange={this.switchCV}>
-                    <option value="1">Template1</option>
-                    <option value="2">Template2</option>
-            </select>
-          </div>
-        </header>
+        <Header switchCV={this.switchCV}
+                switchColorScheme={this.switchColorScheme}
+                colorSchemes={this.state.colorSchemes}/>
         <main className='flex justify-center scale-down'>
           <div className='cv-form'>
             <div className='flex cv-form-header justify-center align-center'>
