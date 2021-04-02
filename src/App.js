@@ -113,7 +113,7 @@ class App extends React.Component {
 
     this.state = {
       form: 'personal',
-      cvTemplate: 'template3',
+      cvTemplate: 'template2',
       colorSchemes: ['Gray', 'Modern', 'Stylish', 'Purple Tints', 'Corporate'],
       switchButton: 'Education and employment',
       firstname: 'John',

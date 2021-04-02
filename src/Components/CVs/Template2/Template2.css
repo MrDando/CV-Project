@@ -4,6 +4,10 @@
     font-size: 14px;
 }
 
+.template2 .icon {
+    color: var(--tertiary);
+}
+
 .template2 h2 {
     font-size: 18px;
     padding-bottom: 5px;
@@ -63,6 +67,18 @@
     flex: 1;
     width: 100%;
     background-color: var(--secondary);
+}
+
+.template2 .contact-row {
+    margin-bottom: 9px;
+}
+
+.template2 .contact-row:last-child {
+    margin-bottom: 0px;
+}
+
+.template2 .contact p {
+    margin-left: 5px;
 }
 
 .template2 .summary {
