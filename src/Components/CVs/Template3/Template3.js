@@ -69,10 +69,22 @@ function Template1(props) {
                     <div className='contact section'>
                         <h2>CONTACT</h2>
                         <div>
-                            <p>{data.adress}</p>
-                            <p>{data.phone}</p>
-                            <p>{data.email}</p>
-                            <p>{data.linkedIn}</p>
+                            <div className='flex align-center contact-row'>
+                                <i class="fas fa-home fa-lg icon"></i>
+                                <p>{data.adress}</p>
+                            </div>
+                            <div className='flex align-center contact-row'>
+                                <i class="fas fa-phone fa-lg icon"></i>
+                                <p>{data.phone}</p>
+                            </div>
+                            <div className='flex align-center contact-row'>
+                                <i class="fas fa-at fa-lg icon"></i>
+                                <p>{data.email}</p>
+                            </div>
+                            <div className='flex align-center contact-row'>
+                                <i class="fab fa-linkedin fa-lg icon"></i>
+                                <p>{data.linkedIn}</p>
+                            </div>
                         </div>
                     </div>
                     <div className='education section'>
