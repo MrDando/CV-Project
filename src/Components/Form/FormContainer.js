@@ -9,7 +9,8 @@ function FormContainer(props) {
         return(
             <PersonalForm   data={props.data} 
                             toggleAccordion={props.toggleAccordion}
-                            submitForm={props.submitForm} 
+                            submitForm={props.submitForm}
+                            uploadPhoto={props.uploadPhoto} 
                             handleChange={props.handleChange} 
                             addSkill={props.addSkill} 
                             modifySkill={props.modifySkill} 

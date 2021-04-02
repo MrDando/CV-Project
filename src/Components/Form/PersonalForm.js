@@ -29,6 +29,15 @@ function PersonalForm(props) {
               </div>
             </form>
           </div>
+          <div>
+            <h4 className='accordion' onClick={props.toggleAccordion}>Photo</h4>
+            <form className='flex column panel' onSubmit={props.uploadPhoto}>
+              <input style={{marginLeft: '50px'}} type='file' accept="image/*"></input>
+              <div className='flex column align-center'>
+                <button className='submit-btn' type='submit'>Upload Photo</button>
+              </div>
+            </form>
+          </div>
           <div className='skills form-section'>
             <h4 className='accordion' onClick={props.toggleAccordion}>Skills</h4>
             <div className='panel'>

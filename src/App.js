@@ -18,6 +18,7 @@ class App extends React.Component {
     this.switchColorScheme = this.switchColorScheme.bind(this)
     this.toggleAccordion = this.toggleAccordion.bind(this)
     this.submitForm = this.submitForm.bind(this)
+    this.uploadPhoto = this.uploadPhoto.bind(this)
     this.handleChange = this.handleChange.bind(this)
     this.addSkill = this.addSkill.bind(this)
     this.modifySkill = this.modifySkill.bind(this)
@@ -274,6 +275,15 @@ class App extends React.Component {
 
   handleChange(e) {
     this.personal[e.target.name] = e.target.value
+  }
+
+  uploadPhoto(e) {
+    e.preventDefault()
+    
+    const photo = e.target.querySelector('input')
+    const photoURL =URL.createObjectURL(photo.files[0]);
+    
+    this.setState({photoURL: photoURL})
   }
 
   addSkill(e) {
@@ -533,7 +543,8 @@ class App extends React.Component {
             </div>
             <FormContainer  data={this.state}
                             toggleAccordion={this.toggleAccordion} 
-                            submitForm={this.submitForm} 
+                            submitForm={this.submitForm}
+                            uploadPhoto={this.uploadPhoto}
                             handleChange={this.handleChange} 
                             addSkill={this.addSkill} 
                             modifySkill={this.modifySkill} 
