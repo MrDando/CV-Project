@@ -226,7 +226,6 @@ class App extends React.Component {
   }
 
   applyColorScheme(scheme) {
-    console.log(scheme)
     const primary = scheme.primary
     const secondary = scheme.secondary
     const tertiary = scheme.tertiary
