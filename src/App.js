@@ -104,7 +104,34 @@ class App extends React.Component {
             quinary: '#f5f5f5',
           }
         }
-      }
+      },
+      template3: {
+        defaultScheme: 'White',
+        schemeList: ['White', 'Modern', 'Stylish'],
+        schemes: {
+          White : {
+            primary: '#112d31',
+            secondary: '#264e58',
+            tertiary: '#f5f5f5',
+            quaternary: '#f5f5f5',
+            quinary: '#f5f5f5',
+          },
+          Modern: {
+            primary: '#87c231',
+            secondary: '#87c231',
+            tertiary: '#212629',
+            quaternary: '#212629',
+            quinary: '#212629',
+          },
+          Stylish: {
+            primary: '#afa295',
+            secondary: '#afa295',
+            tertiary: '#f5f5f5',
+            quaternary: '#f5f5f5',
+            quinary: '#333',
+          }
+        }
+      },
     }
 
     this.personal = {
@@ -113,7 +140,7 @@ class App extends React.Component {
 
     this.state = {
       form: 'personal',
-      cvTemplate: 'template2',
+      cvTemplate: 'template1',
       colorSchemes: ['Gray', 'Modern', 'Stylish', 'Purple Tints', 'Corporate'],
       switchButton: 'Education and employment',
       firstname: 'John',

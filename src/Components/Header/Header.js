@@ -22,6 +22,7 @@ function Header (props) {
               <select className='cv-select select-css' onChange={props.switchCV}>
                       <option value="1">Template1</option>
                       <option value="2">Template2</option>
+                      <option value="3">Template3</option>
               </select>
             </div>
             <div style={{marginLeft: '20px'}}>
