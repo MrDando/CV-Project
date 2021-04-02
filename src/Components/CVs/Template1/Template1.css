@@ -2,19 +2,19 @@
     background-color: var(--secondary);
 }
 
-.personal {
+.template1 .personal {
     padding: 50px 20px 20px 20px;
     width: 40%;
     background-color: var(--primary);
     color: var(--tertiary)
 }
 
-.professional {
+.template1 .professional {
     padding: 50px 20px 20px 20px;
     color: var(--quaternary)
 }
 
-.name span {
+.template1 .name span {
     font-size: 30px;
     font-weight: bold;
 }
@@ -33,7 +33,7 @@
     color: var(--quaternary)
 }
 
-.lastname {
+.template1 .lastname {
     padding-top: 10px;
 }
 
@@ -46,38 +46,38 @@
     width: 160px;
 }
 
-.section {
+.template1 .section {
     padding-top: 20px;
 }
 
-.category {
+.template1 .category {
     padding-bottom: 10px;
 }
 
-.category:last-child {
+.template1 .category:last-child {
     padding-bottom: 0;
 }
 
 
 
-.contact .category-name {
+.template1 .contact .category-name {
     font-weight: bold;
 }
 
-.skills ul {
+.template1 .skills ul {
     padding-top: 10px;
     padding-left: 20px;
 }
 
-.language {
+.template1 .language {
     margin-bottom: 5px;
 }
 
-.languages .proficiency {
+.template1 .languages .proficiency {
     font-size: 0.8em;
 }
 
-.photo-container {
+.template1 .photo-container {
     overflow: hidden;
 }
 

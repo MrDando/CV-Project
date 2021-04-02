@@ -1,0 +1,87 @@
+.template3 {
+    font-size: 14px;
+}
+
+.template3.wrapper {
+    padding: 30px;
+    color: var(--primary);
+    background-color: var(--quinary);
+}
+
+.template3 h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.template3 h3 {
+    font-size: 16px;
+    font-weight: normal;
+}
+
+.template3 .title {
+    padding: 30px 0;
+    margin-bottom: 25px;
+    border-top: 5px solid var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+    text-align: center;
+}
+
+.template3 .name {
+    font-size: 34px;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.template3 .profession {
+    font-size: 20px;
+}
+
+.template3 .main-container {
+    height: 100%;
+}
+
+.template3 .left {
+    padding-right: 30px;
+    margin-right: 30px;
+    border-right: 2px solid var(--secondary);
+}
+
+.template3 .section {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--secondary);
+}
+
+.template3 .section:last-child {
+    padding-bottom: 20px;
+    margin-bottom: none;
+    border: none;
+}
+
+.template3 .item {
+    padding-bottom: 10px;
+}
+
+.template3 .item:last-child {
+    padding-bottom: 0;
+}
+
+.template3 .degree {
+    font-weight: bold;
+}
+
+.template3 .right {
+    flex: 1;
+}
+
+.template3 .summary {
+    text-align: justify;
+}
+
+.template3 .job-intro {
+    padding-bottom: 10px;
+}
+
+.template3 .position {
+    font-weight: bold;
+}
