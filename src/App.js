@@ -230,7 +230,11 @@ class App extends React.Component {
   submitForm(e) {
     e.preventDefault();
 
-    const {firstname, lastname, adress, phone, email, linkedIn} = this.personal
+    let {firstname, lastname, adress, phone, email, linkedIn} = this.personal
+
+    if (!firstname) firstname = ''
+    if (!lastname) lastname= ''
+
     this.setState({
       firstname: firstname,
       lastname: lastname,
@@ -323,7 +327,8 @@ class App extends React.Component {
 
   submitSummary(e) {
     e.preventDefault()
-    const profession = e.target.querySelector('input').value
+    let profession = e.target.querySelector('input').value
+    if (!profession) profession = ''
     const newSummary = e.target.querySelector('textarea').value
 
     this.setState({ profession: profession,
