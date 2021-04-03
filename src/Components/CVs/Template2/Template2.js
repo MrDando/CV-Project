@@ -29,12 +29,12 @@ function Experience(props) {
     return(
         <div>
             {props.experiences.map(experience => {
-                return  <div key={experience.key} className='job-container flex'>
+                return  <div key={experience.key} className='job-container flex' style={{marginBottom: '20px'}}>
                             <div>
                                 <p className='timespan'>{experience.fromObj.year} - {experience.toObj.year}</p>
                             </div>
                             <div className='flex column'>
-                                <div className='flex' style={{marginBottom: '15px'}}>
+                                <div className='flex' style={{marginBottom: '10px'}}>
                                     <span>{experience.position.toUpperCase()}</span>
                                     <span style={{marginLeft: '20px'}}>{experience.employer}</span>
                                 </div>
@@ -50,7 +50,7 @@ function Education(props) {
     return(
         <div>
             {props.educationArr.map(education => {
-                return  <div key={education.key}>
+                return  <div key={education.key} style={{marginBottom: '10px'}}>
                             <h3 className='degree'>{education.degree}</h3>
                             <h3 className='institution'>{education.institution}</h3>
                             <span>{education.fromObj.year} - {education.toObj.year}</span>

@@ -1,5 +1,6 @@
 .template3 {
     font-size: 14px;
+    overflow: hidden;
 }
 
 .template3.wrapper {

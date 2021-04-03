@@ -144,50 +144,19 @@ class App extends React.Component {
       cvTemplate: 'template1',
       colorSchemes: ['Gray', 'Modern', 'Stylish', 'Purple Tints', 'Corporate'],
       switchButton: 'Education and employment',
-      firstname: 'John',
-      lastname: 'Doe',
-      profession: 'Environmental Scientist',
+      firstname: '',
+      lastname: '',
+      profession: '',
       photoURL: placeholderImg, 
-      adress: '7 Greystone St. Wilmington, MA',
-      phone: '012-345-6789',
-      email: 'example.email@google.com',
-      linkedIn: 'www.linkedin.com/in/johndoe/',
-      skills: [ {skillName: "Skydiving", key: "kmt59fx5"},
-                {skillName: "Javascript", key: "kmt59idp"}],
-      languages: [{languageName: "English", proficiency: "Full Professional Proficiency", key: "kmt634di"},
-                  {languageName: "German", proficiency: "Elementary Proficiency", key: "kmt636s2"}],
-      summary: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et pellentesque tortor. 
-                In euismod lectus non dictum faucibus. Sed quis augue ullamcorper, imperdiet est nec, lacinia nibh.`,
-      experiences: [{position: 'Environmental Consultant',
-                      employer: 'Ires Ecology LTD',
-                      from: "2016-12-28",
-                      fromObj: {
-                        day: "28",
-                        month: "12",
-                        year: "2016"
-                      },
-                      to: "2021-12-31",
-                      toObj: {
-                        day: "31",
-                        month: "12",
-                        year: "2021"
-                      },
-                      key: "kmt5u9x7",
-                      description: "Did some Environmental impact assessments."}],
-      educationArr: [{degree: "Master in Geological Engineering",
-                      description: "Studied environmental geology.",
-                      from: "2013-09-28",
-                      fromObj: {day: "28",
-                                month: "09",
-                                year: "2013"},
-                      institution: "University of Zagreb",
-                      key: "kmt6a521",
-                      to: "2015-11-18",
-                      toObj: {day: "18",
-                              month: "11",
-                              year: "2015"
-                      }
-                    }]
+      adress: '',
+      phone: '',
+      email: '',
+      linkedIn: '',
+      skills: [],
+      languages: [],
+      summary: ``,
+      experiences: [],
+      educationArr: []
     }
   }
 

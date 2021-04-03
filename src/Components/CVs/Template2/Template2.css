@@ -2,6 +2,7 @@
     background-color: var(--quinary);
     color: var(--tertiary);
     font-size: 14px;
+    overflow: hidden;
 }
 
 .template2 .icon {

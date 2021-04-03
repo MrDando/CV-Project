@@ -1,5 +1,6 @@
 .template1 {
     background-color: var(--secondary);
+    overflow: hidden;
 }
 
 .template1 .personal {
@@ -67,6 +68,10 @@
 .template1 .skills ul {
     padding-top: 10px;
     padding-left: 20px;
+}
+
+.template1 .item {
+    margin-bottom: 20px;
 }
 
 .template1 .language {

@@ -11,9 +11,7 @@ function Skills(props) {
                     {props.skills.map(skill => {
                         return <li key={skill.key}>{skill.skillName}</li>
                     })}
-                </ul>
-
-                
+                </ul>              
             </div>
         </div>
     )
@@ -25,7 +23,7 @@ function Languages(props) {
             <h2>Languages</h2>
             <div id='languages-list'>
                 {props.languages.map(language => {
-                    return  <div key={language.key} className='language'>
+                    return  <div key={language.key} className='language item'>
                                 <div className='name'>{language.languageName}</div>
                                 <div className='proficiency'>({language.proficiency})</div>
                             </div>
@@ -40,7 +38,7 @@ function Experience(props) {
         <div className='section'>
             <h2>Experience</h2>
             {props.experiences.map(experience => {
-                return  <div key={experience.key} className='job-container'>
+                return  <div key={experience.key} className='job-container item'>
                             <div className='flex' style={{justifyContent: 'space-between'}}>
                                 <div className='flex column'>
                                     <h3 className='organization-name'>{experience.employer}</h3>
