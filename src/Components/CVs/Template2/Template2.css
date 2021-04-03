@@ -50,7 +50,7 @@
 
 .template2 .photo-container {
     margin-left: 20px;
-    border: 1px solid gray;
+    border: 1px solid var(--quaternary);
     width: 150px;
     overflow: hidden;
 }
