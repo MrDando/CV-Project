@@ -1,11 +1,14 @@
 header {
     padding: 20px 10px;
     background-color: var(--jet);
-    color: var(--cultured)
+    color: var(--cultured);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
   }
 
   .webpage-title {
-      margin-left: 40%;
+      margin-left: auto;
   }
 
   .header-right {

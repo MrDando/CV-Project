@@ -503,7 +503,7 @@ class App extends React.Component {
                 switchColorScheme={this.switchColorScheme}
                 colorSchemes={this.state.colorSchemes}
                 gitHubURL={gitHubMark}/>
-        <main className='flex justify-center scale-down'>
+        <main className='flex'>
           <div className='cv-form'>
             <div className='flex cv-form-header justify-center align-center'>
               <h2 className='cv-form-title'>Input Form</h2>

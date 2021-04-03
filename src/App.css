@@ -1,6 +1,10 @@
+main {
+  padding-top: 80px;
+}
+
 .cv-form {
     height: 800px;
-    width: 620px;
+    min-width: 620px;
     margin: 30px;
     border: 1px solid black;
     background-color: var(--cultured);
