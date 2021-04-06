@@ -14,14 +14,14 @@ function PersonalForm(props) {
             <form className='flex column panel' onSubmit={props.submitForm}>
               <div className ='flex' style={{justifyContent: 'space-between'}}>
                 <div className ='flex column contact-row'>
-                  <input name='firstname' className='form-input contact-input' placeholder='First name' onChange={props.handleChange}></input>
-                  <input name='lastname' className='form-input contact-input' placeholder='Last name' onChange={props.handleChange}></input>
-                  <input name='adress' className='form-input contact-input' placeholder='Adress' onChange={props.handleChange}></input>
+                  <input name='firstname' className='form-input contact-input' placeholder='First name' defaultValue={props.data.firstname} onChange={props.handleChange}></input>
+                  <input name='lastname' className='form-input contact-input' placeholder='Last name' defaultValue={props.data.lastname} onChange={props.handleChange}></input>
+                  <input name='adress' className='form-input contact-input' placeholder='Adress' defaultValue={props.data.adress} onChange={props.handleChange}></input>
                 </div>
                 <div className='flex column contact-row'>
-                  <input name='phone' className='form-input contact-input' placeholder='Phone' onChange={props.handleChange}></input>
-                  <input name='email' className='form-input contact-input' placeholder='Email' onChange={props.handleChange}></input>
-                  <input name='linkedIn' className='form-input contact-input' placeholder='LinkedIn' onChange={props.handleChange}></input>
+                  <input name='phone' className='form-input contact-input' placeholder='Phone' defaultValue={props.data.phone} onChange={props.handleChange}></input>
+                  <input name='email' className='form-input contact-input' placeholder='Email' defaultValue={props.data.email} onChange={props.handleChange}></input>
+                  <input name='linkedIn' className='form-input contact-input' placeholder='LinkedIn' defaultValue={props.data.linkedIn} onChange={props.handleChange}></input>
                 </div>
               </div>
               <div className='flex justify-center'>
